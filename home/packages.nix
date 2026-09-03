@@ -1,0 +1,60 @@
+{
+  pkgs,
+  inputs,
+  noctaliaPackage,
+  ...
+}:
+
+with pkgs;
+[
+  noctaliaPackage
+  kitty
+  nwg-look
+  libnotify
+  xwayland-satellite
+  bibata-cursors
+  adw-gtk3
+  papirus-icon-theme
+  discord
+  spotify
+  qbittorrent
+  localsend
+  protonplus
+  nautilus
+  file-roller
+  faugus-launcher
+  zathura
+  imv
+  songrec
+  mpv
+  yt-dlp
+  aria2
+  imagemagick
+  ffmpegthumbnailer
+  mkvtoolnix-cli
+  gpu-screen-recorder
+  yazi
+  eza
+  zoxide
+  btop
+  ncdu
+  duf
+  fastfetch
+  ripgrep
+  fd
+  tree
+  lazygit
+  git
+  zed-editor
+  helix
+  python3
+  pipx
+  uv
+  jupyter
+  gcc16
+  llvmPackages_22.clang-tools
+  texlive.combined.scheme-full
+  texlab
+  android-tools
+  inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.specific
+]
