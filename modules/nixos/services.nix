@@ -11,13 +11,13 @@
     packages = with pkgs; [ bluez ];
   };
 
-  services.logind = {
-    powerKey = "suspend";
-    powerKeyLongPress = "poweroff";
-    lidSwitch = "suspend";
-    lidSwitchExternalPower = "ignore";
-    lidSwitchDocked = "ignore";
-  };
+  services.logind.settings.Login = {
+  HandleLidSwitch = "suspend";
+  HandleLidSwitchDocked = "ignore";
+  HandleLidSwitchExternalPower = "suspend";
+  HandlePowerKey = "poweroff";
+  HandlePowerKeyLongPress = "poweroff";
+};
 
   services.accounts-daemon.enable = true;
   services.power-profiles-daemon.enable = true;

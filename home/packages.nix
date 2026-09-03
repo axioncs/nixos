@@ -47,14 +47,12 @@ with pkgs;
   git
   zed-editor
   helix
-  python3
   pipx
   uv
   jupyter
   gcc16
-  llvmPackages_22.clang-tools
-  texlive.combined.scheme-full
+  texliveFull
   texlab
   android-tools
-  inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.specific
+  inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 ]

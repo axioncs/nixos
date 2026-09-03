@@ -1,7 +1,7 @@
-{ config, lib, ... }:
+{ osConfig, lib, ... }:
 
 let
-  noctalia = lib.getExe config.axioncs.noctaliaPackage;
+  noctalia = lib.getExe osConfig.axioncs.noctaliaPackage;
 in
 {
   home.sessionVariables = {

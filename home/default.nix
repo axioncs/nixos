@@ -1,6 +1,6 @@
 {
   pkgs,
-  config,
+  osConfig,
   lib,
   inputs,
   desktop,
@@ -19,13 +19,13 @@
     dir = ./programs;
   };
 
-  home.username = config.axioncs.username;
-  home.homeDirectory = "/home/${config.axioncs.username}";
-  home.stateVersion = config.axioncs.stateVersion;
+  home.username = osConfig.axioncs.username;
+  home.homeDirectory = "/home/${osConfig.axioncs.username}";
+  home.stateVersion = osConfig.axioncs.stateVersion;
 
   home.packages = import ./packages.nix {
     inherit pkgs inputs;
-    noctaliaPackage = config.axioncs.noctaliaPackage;
+    noctaliaPackage = osConfig.axioncs.noctaliaPackage;
   };
 
   home.sessionVariables = {
