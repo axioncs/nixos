@@ -1,5 +1,4 @@
 { pkgs, inputs, ... }:
-
 {
   environment.systemPackages = with pkgs; [
     curl
@@ -14,5 +13,8 @@
     dex
     resvg
     xdg-user-dirs
-  ];
+  ] ++ (with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
+    hermes-agent
+    hermes-desktop
+  ]);
 }

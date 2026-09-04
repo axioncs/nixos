@@ -2,9 +2,9 @@ local V                   = {}
 
 -- Apps
 V.terminal                = "kitty"
-V.browser                 = "zen-browser"
+V.browser                 = "zen"
 V.editor                  = "zeditor"
-V.fileManager             = "kitty -e fish -ic y"
+V.fileManager             = "kitty -e fish -ic yazi"
 V.vpn                     = "surfshark"
 V.aria                    = "~/.hermes/hermes-agent/venv/bin/hermes desktop"
 

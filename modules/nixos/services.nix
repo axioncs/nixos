@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  programs.uwsm.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
   security.polkit.enablePkexecWrapper = true;
 
   hardware.enableRedistributableFirmware = true;
@@ -24,4 +29,5 @@
   services.printing.enable = false;
   services.gvfs.enable = true;
   services.tumbler.enable = true;
+  services.upower.enable = true;
 }

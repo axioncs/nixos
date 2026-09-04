@@ -2,10 +2,19 @@
 
 {
   fonts.packages = with pkgs; [
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-    noto-fonts-color-emoji
+    adwaita-fonts
     noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    nerd-fonts.jetbrains-mono
   ];
+
+  programs.dconf.profiles.user.databases = [
+      {
+        settings."org/gnome/desktop/interface" = {
+          font-name = "Sans 11";
+          document-font-name = "Sans 11";
+          monospace-font-name = "Sans 11";
+        };
+      }
+    ];
 }

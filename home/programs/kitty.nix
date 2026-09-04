@@ -38,9 +38,5 @@
       "ctrl+underscore" = "change_font_size all -1";
       "ctrl+kp_subtract" = "change_font_size all -1";
     };
-
-    # extraConfig = ''
-    #   include themes/noctalia.conf
-    # '';
   };
 }

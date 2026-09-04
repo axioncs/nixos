@@ -1,11 +1,101 @@
 { pkgs, lib, config, ... }:
 
 {
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+
+    settings = {
+      palette = "grey";
+      format = "$username$hostname$directory$fill[$all](grey)$time$line_break$character";
+
+      character = {
+        success_symbol = "[~>](bold green)";
+        error_symbol = "[~>](bold red)";
+      };
+
+      fill = {
+        symbol = "─";
+        style = "#222222";
+      };
+
+      cmd_duration = {
+        min_time = 10000;
+      };
+
+      time = {
+        disabled = false;
+        time_format = "%F %T";
+        style = "#444444";
+        format = "[$time]($style)";
+      };
+
+      python = {
+        symbol = "py ";
+      };
+
+      package = {
+        symbol = "package ";
+        style = "#777777";
+      };
+
+      git_branch = {
+        symbol = "git ";
+      };
+
+      aws = {
+        symbol = "aws ";
+      };
+
+      terraform = {
+        symbol = "tf ";
+        style = "bold #777777";
+      };
+
+      palettes.grey = {
+        grey = "#777777";
+        none = "#777777";
+        white = "#777777";
+        rosewater = "#777777";
+        flamingo = "#777777";
+        pink = "#777777";
+        mauve = "#777777";
+        maroon = "#777777";
+        peach = "#777777";
+        sky = "#777777";
+        sapphire = "#777777";
+        blue = "#777777";
+        lavender = "#777777";
+        text = "#777777";
+        subtext1 = "#777777";
+        subtext0 = "#777777";
+        overlay2 = "#777777";
+        overlay1 = "#777777";
+        overlay0 = "#777777";
+        surface2 = "#777777";
+        surface1 = "#777777";
+        surface0 = "#777777";
+        base = "#777777";
+        mantle = "#777777";
+        crust = "#777777";
+        background = "#777777";
+        current_line = "#777777";
+        foreground = "#777777";
+        comment = "#777777";
+        cyan = "#777777";
+        green = "#777777";
+        orange = "#777777";
+        purple = "#777777";
+        red = "#777777";
+        yellow = "#777777";
+      };
+    };
+  };
+
   programs.fish = {
     enable = true;
 
     plugins = [
-      { name = "tide"; src = pkgs.fishPlugins.tide.src; }
       { name = "done"; src = pkgs.fishPlugins.done.src; }
     ];
 
@@ -19,20 +109,11 @@
         fish_add_path "$HOME/.opencode/bin"
       end
 
-      set -U tide_left_prompt_items pwd git newline character
-      set -U tide_right_prompt_items status cmd_duration background_jobs time
-      set -U tide_cmd_duration_threshold 3000
-      set -U tide_git_truncation_length 20
-
       set -U __done_min_cmd_duration 10000
       set -U __done_notification_urgency_level low
 
       set -x MANROFFOPT "-c"
       set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
-      function fish_greeting
-          fastfetch
-      end
 
       function __history_previous_command
         switch (commandline -t)
@@ -74,6 +155,10 @@
           else
               command cp $argv
           end
+      end
+
+      function fish_greeting
+         fastfetch
       end
 
       if status is-interactive

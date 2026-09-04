@@ -45,8 +45,11 @@ with pkgs;
   tree
   lazygit
   git
+  gh
   zed-editor
   helix
+  bat
+  nh
   pipx
   uv
   jupyter

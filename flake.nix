@@ -10,7 +10,7 @@
     };
 
     nur.url = "github:nix-community/NUR";
-
+    llm-agents.url = "github:numtide/llm-agents.nix";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
 
     noctalia-greeter = {
