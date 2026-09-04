@@ -21,4 +21,6 @@
 
   networking.hostName = config.axioncs.hostname;
   system.stateVersion = config.axioncs.stateVersion;
+
+  programs.luatools-moon.enable = true;
 }

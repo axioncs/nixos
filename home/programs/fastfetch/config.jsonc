@@ -1,82 +1,77 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-      "type": "builtin",
-      "source": "nixos",
+      "source": "nixos2",
+      "padding": {
+	        "top": 1
+    },
     },
     "display": {
-        "separator": " "
-    },
-    "modules": [
-	"break",
-	"break",
-	{
-            "type": "title",
-            "keyWidth": 10
+            "separator": " ›  "
         },
+        "modules": [
+        	"break",
+       	"title",
         "break",
         {
             "type": "os",
-            "key": " ",
-            "keyColor": "33",  // = color3
+            "key": "OS  ",
+            "keyColor": "31",  // = color1
         },
         {
             "type": "command",
-            "key": " ",
-            "keyColor": "33",
+            "key": "GEN ",
+            "keyColor": "32",
             "text": "echo \"Generation $(readlink /nix/var/nix/profiles/system | sed 's/.*-\\([0-9]*\\)-link/\\1/')\""
         },
         {
             "type": "kernel",
-            "key": " ",
+            "key": "KER ",
             "keyColor": "33",
         },
         {
             "type": "packages",
-            "key": " ",
-            "keyColor": "33",
+            "key": "PKG ",
+            "keyColor": "34",
         },
         {
             "type": "shell",
-            "key": " ",
-            "keyColor": "33",
+            "key": "SH  ",
+            "keyColor": "35",
         },
         {
             "type": "terminal",
-            "key": " ",
-            "keyColor": "33",
+            "key": "TER ",
+            "keyColor": "36",
         },
         {
             "type": "wm",
-            "key": " ",
-            "keyColor": "33",
+            "key": "WM  ",
+            "keyColor": "31",
         },
         {
             "type": "uptime",
-            "key": " ",
-            "keyColor": "33",
+            "key": "UP  ",
+            "keyColor": "32",
         },
         {
             "type": "cpu",
-            "key": " ",
+            "key": "CPU ",
             "keyColor": "33",
         },
         {
             "type": "gpu",
-            "key": "󰊴 ",
-            "keyColor": "33",
+            "key": "GPU ",
+            "keyColor": "34",
         },
         {
             "type": "memory",
-            "key": " ",
-            "keyColor": "33",
-        },
-        {
-            "type": "media",
-            "key": "󰝚 ",
-            "keyColor": "33",
+            "key": "RAM ",
+            "keyColor": "35",
         },
         "break",
+        "break",
+        "colors",
         "break",
     ]
 }

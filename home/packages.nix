@@ -55,7 +55,7 @@ with pkgs;
   uv
   jupyter
   gcc16
-  texliveFull
+  texliveBasic
   texlab
   android-tools
   inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
