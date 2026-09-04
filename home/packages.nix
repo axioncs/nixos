@@ -55,6 +55,7 @@ with pkgs;
   uv
   jupyter
   gcc16
+  nil
   texliveBasic
   texlab
   android-tools
