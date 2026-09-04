@@ -4,6 +4,10 @@
   programs.kitty = {
     enable = true;
 
+    extraConfig = ''
+      include themes/noctalia.conf
+    '';
+
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 11;

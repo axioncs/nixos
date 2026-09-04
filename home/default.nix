@@ -12,7 +12,9 @@
     ../desktops/shared/home.nix
     (../desktops + "/${desktop}/home")
     ./editors/zed.nix
+    ./editors/helix.nix
     ./shell/fish.nix
+    ./noctalia.nix
   ]
   ++ import ../lib/import-programs.nix {
     inherit lib;

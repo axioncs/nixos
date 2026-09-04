@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       user.name = "axioncs";
-      user.email = "your@email.com";
+      user.email = "shadman17244@gmail.com";
       init.defaultBranch = "main";
       pull.rebase = false;
       credential.helper = "!gh auth git-credential";

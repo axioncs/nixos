@@ -16,6 +16,7 @@ with pkgs;
   adw-gtk3
   papirus-icon-theme
   discord
+  whatsapp-electron
   spotify
   qbittorrent
   localsend
