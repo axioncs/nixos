@@ -17,7 +17,6 @@ with pkgs;
   papirus-icon-theme
   discord
   whatsapp-electron
-  spotify
   qbittorrent
   localsend
   protonplus
@@ -28,6 +27,7 @@ with pkgs;
   imv
   songrec
   mpv
+  stremio-linux-shell
   yt-dlp
   aria2
   imagemagick
@@ -44,6 +44,8 @@ with pkgs;
   ripgrep
   fd
   tree
+  grimblast
+  tesseract
   lazygit
   git
   gh
@@ -56,8 +58,10 @@ with pkgs;
   jupyter
   gcc16
   nil
+  nixd
   texliveBasic
   texlab
   android-tools
   inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+  inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default
 ]

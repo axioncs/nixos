@@ -33,7 +33,8 @@
         {
             "type": "packages",
             "key": "PKG ",
-            "keyColor": "34"
+            "keyColor": "34",
+            "format": "{nix-system} (nix), {flatpak-user} (flatpak)"
         },
         {
             "type": "shell",

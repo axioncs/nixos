@@ -24,7 +24,7 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace        = "special:whatsapp",
-    on_created_empty = "elecwhat",
+    on_created_empty = "whatsapp-electron",
 })
 
 hl.workspace_rule({
@@ -49,7 +49,7 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace = "special:aria",
-    on_created_empty = "~/.hermes/hermes-agent/venv/bin/hermes desktop"})
+    on_created_empty = V.aria})
 
 hl.workspace_rule({
     workspace        = "special:vpn",

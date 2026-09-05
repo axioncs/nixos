@@ -5,8 +5,8 @@ V.terminal                = "kitty"
 V.browser                 = "zen"
 V.editor                  = "zeditor"
 V.fileManager             = "kitty -e fish -ic yazi"
-V.vpn                     = "surfshark"
-V.aria                    = "~/.hermes/hermes-agent/venv/bin/hermes desktop"
+V.vpn                     = "flatpak run com.surfshark.Surfshark"
+V.aria                    = "hermes-desktop"
 
 -- Mod key
 V.mod                     = "SUPER"

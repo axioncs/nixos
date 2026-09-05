@@ -1,10 +1,8 @@
 { pkgs, ... }:
 
 {
-  programs.uwsm.enable = true;
   programs.hyprland = {
     enable = true;
-    withUWSM = true;
   };
   security.polkit.enablePkexecWrapper = true;
 
@@ -25,6 +23,10 @@
 };
 
   services.accounts-daemon.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
+  programs.seahorse.enable = true;
+  services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
   services.printing.enable = false;
   services.gvfs.enable = true;

@@ -26,7 +26,7 @@ hl.bind(mod .. " + T", hl.dsp.exec_cmd(V.terminal))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(V.fileManager))
 hl.bind(mod .. " + W", hl.dsp.exec_cmd(V.browser))
 hl.bind(mod .. " + C", hl.dsp.exec_cmd(V.editor))
-hl.bind(mod .. " + M", hl.dsp.exec_cmd("stremio-enhanced"))
+hl.bind(mod .. " + M", hl.dsp.exec_cmd("stremio"))
 hl.bind(mod .. " + H", hl.dsp.exec_cmd("hayase"))
 hl.bind(mod2 .. " + G", hl.dsp.exec_cmd("faugus-launcher"))
 hl.bind(mod2 .. " + A", hl.dsp.exec_cmd("llauncher"))
@@ -164,8 +164,8 @@ hl.bind(mod .. " + SHIFT + U", hl.dsp.exec_cmd(
     "sh -c 'fish ~/.local/share/hyprdots/install.fish --update &'"
 ))
 
--- Alt+Tab (standard MRU)
-hl.bind("ALT + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+-- Super+Tab (standard MRU)
+hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
 
--- Super+Tab (workspace-filtered)
-hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
+-- Alt+Tab (workspace-filtered)
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))

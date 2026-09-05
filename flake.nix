@@ -9,9 +9,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur.url = "github:nix-community/NUR";
+    nur = {
+          url = "github:nix-community/NUR";
+          inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     llm-agents.url = "github:numtide/llm-agents.nix";
+
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
@@ -23,6 +33,10 @@
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    snappy-switcher = {
+      url = "github:OpalAayan/snappy-switcher";
     };
   };
 

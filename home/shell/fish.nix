@@ -160,10 +160,6 @@
         abbr yt yt-dlp
 
       end
-
-      fish_add_path /home/axioncs/.spicetify
-      fish_add_path ~/.local/bin
-      set -x R_LIBS_USER ~/.local/lib/R/library
     '';
   };
 
