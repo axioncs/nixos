@@ -23,6 +23,7 @@
       ];
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
+      netrc-file = "/etc/nix-secrets/netrc";
     };
 
   nix.gc = {

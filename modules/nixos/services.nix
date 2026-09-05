@@ -17,7 +17,7 @@
   services.logind.settings.Login = {
   HandleLidSwitch = "suspend";
   HandleLidSwitchDocked = "ignore";
-  HandleLidSwitchExternalPower = "suspend";
+  HandleLidSwitchExternalPower = "ignore";
   HandlePowerKey = "suspend";
   HandlePowerKeyLongPress = "poweroff";
 };

@@ -165,7 +165,7 @@ hl.bind(mod .. " + SHIFT + U", hl.dsp.exec_cmd(
 ))
 
 -- Super+Tab (standard MRU)
-hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("snappy-switcher next --mod super"))
 
 -- Alt+Tab (workspace-filtered)
-hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod alt"))

@@ -15,7 +15,6 @@ with pkgs;
   bibata-cursors
   adw-gtk3
   papirus-icon-theme
-  discord
   whatsapp-electron
   qbittorrent
   localsend
