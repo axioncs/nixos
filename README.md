@@ -2,7 +2,7 @@
 
 Personal NixOS flake config (Hyprland desktop, home-manager, etc).
 
-![screenshot](.assets/screenshot.png)
+![screenshot](./assets/screenshot.png)
 
 ## Install
 
