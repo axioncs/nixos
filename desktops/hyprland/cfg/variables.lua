@@ -2,7 +2,7 @@ local V                   = {}
 
 -- Apps
 V.terminal                = "kitty"
-V.browser                 = "zen"
+V.browser                 = "helium"
 V.editor                  = "zeditor"
 V.fileManager             = "kitty -e fish -ic yazi"
 V.vpn                     = "flatpak run com.surfshark.Surfshark"

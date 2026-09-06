@@ -25,7 +25,6 @@ with pkgs;
   zathura
   imv
   songrec
-  mpv
   stremio-linux-shell
   yt-dlp
   aria2
@@ -61,6 +60,5 @@ with pkgs;
   texliveBasic
   texlab
   android-tools
-  inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default
 ]

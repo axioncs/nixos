@@ -30,8 +30,8 @@
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+    helium-flake = {
+      url = "github:oxcl/nix-flake-helium-browser";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
