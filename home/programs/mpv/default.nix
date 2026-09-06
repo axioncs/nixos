@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
+let
+  shaders = inputs.default-shader-pack + "/shaders";
+in
 {
   programs.mpv = {
     enable = true;
@@ -52,7 +55,7 @@
       gamut-mapping-mode = "perceptual";
 
       sub-font = "Netflix Sans Medium";
-      sub-bold = "no";
+      sub-bold = "yes";
       sub-font-size = "35";
       sub-shadow-offset = "1";
       sub-color = "#FFFFFF";
@@ -74,12 +77,26 @@
         deband = "no";
         deband-iterations = "0";
       };
-      anime = {
-        profile-desc = "Anime content";
-        profile-cond = "((width == 1920 and height == 1080) or (width == 1280 and height == 720)) and (estimated-vf-fps <= 30)";
+
+      anime-1080p = {
+        profile-desc = "Anime4K Mode A (1080p)";
+        profile-cond = "(width >= 1920 and height >= 1080) and (estimated-vf-fps <= 30)";
         profile-restore = "copy";
-        glsl-shaders-append = "~~/shaders/Anime4K_Restore_CNN_Soft_VL.glsl";
+        glsl-shaders = "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Restore_CNN_VL.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl";
       };
+      anime-720p = {
+        profile-desc = "Anime4K Mode B (720p)";
+        profile-cond = "(width >= 1280 and height >= 720) and (width < 1920) and (estimated-vf-fps <= 30)";
+        profile-restore = "copy";
+        glsl-shaders = "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Restore_CNN_Soft_VL.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl";
+      };
+      anime-480p = {
+        profile-desc = "Anime4K Mode C (480p)";
+        profile-cond = "(width < 1280 or height < 720) and (estimated-vf-fps <= 30)";
+        profile-restore = "copy";
+        glsl-shaders = "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Upscale_Denoise_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl";
+      };
+
       hfr = {
         profile-desc = "High frame rate content";
         profile-cond = "(estimated-vf-fps >= 55)";
@@ -95,7 +112,7 @@
     ];
 
     scriptOpts = {
-      modernx-zydezu = {
+      modernx = {
         vid_scale = "no";
         scale_windowed = "1.5";
         scale_fullscreen = "1.5";
@@ -114,16 +131,23 @@
     };
   };
 
-  xdg.configFile = {
-    "mpv/scripts/discord.lua".source = ./scripts/discord.lua;
+  xdg.configFile."mpv/input.conf".text = ''
+    CTRL+1 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Restore_CNN_VL.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode A (HQ)"
+    CTRL+2 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Restore_CNN_Soft_VL.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode B (HQ)"
+    CTRL+3 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Upscale_Denoise_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode C (HQ)"
+    CTRL+4 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Restore_CNN_VL.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K_Restore_CNN_M.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode A+A (HQ)"
+    CTRL+5 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Restore_CNN_Soft_VL.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Restore_CNN_Soft_M.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode B+B (HQ)"
+    CTRL+6 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Upscale_Denoise_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Restore_CNN_M.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode C+A (HQ)"
+    CTRL+0 no-osd change-list glsl-shaders clr ""; show-text "GLSL shaders cleared"
+  '';
 
-    "mpv/shaders/KrigBilateral.glsl".source = ./shaders/KrigBilateral.glsl;
-    "mpv/shaders/Anime4K_Restore_CNN_Soft_VL.glsl".source = ./shaders/Anime4K_Restore_CNN_Soft_VL.glsl;
+  xdg.configFile."mpv/scripts/discord.lua".source = ./scripts/discord.lua;
 
-    "mpv/discord" = {
-      source = ./discord;
-      executable = true;
-    };
+  xdg.configFile."mpv/shaders".source = shaders;
+
+  xdg.configFile."mpv/discord" = {
+    source = ./discord;
+    executable = true;
   };
 
   home.file = {

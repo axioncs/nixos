@@ -122,8 +122,18 @@
          fastfetch
       end
 
+      function y
+	        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	        command yazi $argv --cwd-file="$tmp"
+	        if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+		        builtin cd -- "$cwd"
+	        end
+	        command rm -f -- "$tmp"
+      end
+
       if status is-interactive
         command -v direnv &>/dev/null && direnv hook fish | source
+        command -v zoxide &>/dev/null && zoxide init fish | source
         command -v zoxide &>/dev/null && zoxide init fish --cmd cd | source
 
         alias aria='hermes'
@@ -162,15 +172,6 @@
       end
     '';
   };
-
-  programs.fish.functions.y = ''
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    command yazi $argv --cwd-file="$tmp"
-    if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
-        builtin cd -- "$cwd"
-    end
-    command rm -f -- "$tmp"
-  '';
 
   home.activation.removeManagedFishVariables = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     fish_vars="${config.home.homeDirectory}/.config/fish/fish_variables"

@@ -32,9 +32,9 @@ with pkgs;
   ffmpegthumbnailer
   mkvtoolnix-cli
   gpu-screen-recorder
-  yazi
   eza
   zoxide
+  fzf
   btop
   ncdu
   duf

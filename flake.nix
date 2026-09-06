@@ -10,8 +10,8 @@
     };
 
     nur = {
-          url = "github:nix-community/NUR";
-          inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     llm-agents.url = "github:numtide/llm-agents.nix";
@@ -37,6 +37,11 @@
 
     snappy-switcher = {
       url = "github:OpalAayan/snappy-switcher";
+    };
+
+    default-shader-pack = {
+      url = "github:iwalton3/default-shader-pack";
+      flake = false;
     };
   };
 
