@@ -91,10 +91,11 @@
 
     scripts = with pkgs.mpvScripts; [
       thumbfast
+      modernx-zydezu
     ];
 
     scriptOpts = {
-      modernx = {
+      modernx-zydezu = {
         vid_scale = "no";
         scale_windowed = "1.5";
         scale_fullscreen = "1.5";
@@ -114,7 +115,6 @@
   };
 
   xdg.configFile = {
-    "mpv/scripts/modernx.lua".source = ./scripts/modernx.lua;
     "mpv/scripts/discord.lua".source = ./scripts/discord.lua;
 
     "mpv/shaders/KrigBilateral.glsl".source = ./shaders/KrigBilateral.glsl;
@@ -128,7 +128,6 @@
 
   home.file = {
     ".local/share/fonts/NetflixSans-Medium.ttf".source = ./fonts/NetflixSans-Medium.ttf;
-    ".local/share/fonts/fluent-system-icons.ttf".source = ./fonts/fluent-system-icons.ttf;
   };
 
   fonts.fontconfig.enable = true;
