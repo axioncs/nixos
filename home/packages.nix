@@ -16,7 +16,7 @@ with pkgs;
   adw-gtk3
   papirus-icon-theme
   whatsapp-electron
-  qbittorrent
+  transmission_4-gtk
   localsend
   protonplus
   nautilus

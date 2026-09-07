@@ -46,7 +46,7 @@ hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
 hl.bind(mod .. " + SHIFT + S", hl.dsp.workspace.toggle_special("vpn"))
 hl.bind(mod .. " + G", hl.dsp.workspace.toggle_special("steam"))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.workspace.toggle_special("btop"))
-hl.bind(mod .. " + SHIFT + Q", hl.dsp.workspace.toggle_special("qbittorrent"))
+hl.bind(mod .. " + SHIFT + Q", hl.dsp.workspace.toggle_special("torrent"))
 
 --  Noctalia binds
 hl.bind("ALT + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
@@ -141,8 +141,8 @@ hl.bind(mod2 .. " + down", hl.dsp.layout("cyclenext"))    -- monocle: next windo
 hl.bind(mod2 .. " + up", hl.dsp.layout("cyclenext prev")) -- monocle: prev window
 
 --  Screenshots
-hl.bind("Print", hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen"))
-hl.bind("CTRL + Print", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+hl.bind("Print", hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen"), { locked = true })
+hl.bind("CTRL + Print", hl.dsp.exec_cmd("noctalia msg screenshot-region"), { locked = true })
 
 --  Exit / Power
 hl.bind(mod .. " + SHIFT + E", hl.dsp.exit())

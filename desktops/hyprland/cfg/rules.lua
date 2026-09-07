@@ -49,7 +49,8 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace = "special:aria",
-    on_created_empty = V.aria})
+    on_created_empty = V.aria,
+})
 
 hl.workspace_rule({
     workspace        = "special:vpn",
@@ -57,8 +58,8 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
-    workspace = "special:qbittorrent",
-    on_created_empty = "qbittorrent",
+    workspace        = "special:torrent",
+    on_created_empty = "transmission-gtk",
 })
 
 hl.window_rule({
