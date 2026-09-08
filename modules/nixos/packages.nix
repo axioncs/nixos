@@ -14,6 +14,7 @@
     dex
     resvg
     xdg-user-dirs
+    ananicy-rules-cachyos_git
   ] ++ (with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
     hermes-agent
     hermes-desktop

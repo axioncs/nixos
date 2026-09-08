@@ -16,10 +16,14 @@
       extra-substituters = [
         "https://noctalia.cachix.org"
         "https://cache.numtide.com"
+        "https://forkprince.cachix.org"
+        "https://ev357.cachix.org"
       ];
       extra-trusted-public-keys = [
         "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+        "forkprince.cachix.org-1:9cN+fX492ZKlfd228xpYAC3T9gNKwS1sZvCqH8iAy1M="
+        "ev357.cachix.org-1:bI65rULXWJ8IMM+tosc/Z+9W53nL6uj4+5FLXX6BN3Q="
       ];
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;

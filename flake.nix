@@ -17,6 +17,7 @@
     llm-agents.url = "github:numtide/llm-agents.nix";
     nixcord.url = "github:4evy/nixcord";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    custom-packages.url = "github:Rishabh5321/custom-packages-flake";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
