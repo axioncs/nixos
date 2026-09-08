@@ -62,7 +62,6 @@ with pkgs;
   inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.stremio-enhanced
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.mangayomi
-  nur.repos.forkprince.twintaillauncher
   nur.repos.claymorwan.shimelinux
   nur.repos.Ev357.hayase
 ]
