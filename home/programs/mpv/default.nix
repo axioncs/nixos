@@ -35,10 +35,10 @@ in
       glsl-shaders = "~~/shaders/KrigBilateral.glsl";
 
       deband = "yes";
-      deband-iterations = "3";
+      deband-iterations = "2";
       deband-threshold = "35";
-      deband-range = "16";
-      deband-grain = "8";
+      deband-range = "20";
+      deband-grain = "5";
 
       target-colorspace-hint = "yes";
       target-colorspace-hint-mode = "source-dynamic";
@@ -78,28 +78,9 @@ in
         deband-iterations = "0";
       };
 
-      anime-1080p = {
-        profile-desc = "Anime4K Mode A (1080p)";
-        profile-cond = "(width >= 1920 and height >= 1080) and (width < 3840) and (p[\"estimated-vf-fps\"] <= 30)";
-        profile-restore = "copy";
-        glsl-shaders = "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Restore_CNN_VL.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl";
-      };
-      anime-720p = {
-        profile-desc = "Anime4K Mode B (720p)";
-        profile-cond = "(width >= 1280 and height >= 720) and (width < 1920) and (p[\"estimated-vf-fps\"] <= 30)";
-        profile-restore = "copy";
-        glsl-shaders = "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Restore_CNN_Soft_VL.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl";
-      };
-      anime-480p = {
-        profile-desc = "Anime4K Mode C (480p)";
-        profile-cond = "(width < 1280 or height < 720) and (p[\"estimated-vf-fps\"] <= 30)";
-        profile-restore = "copy";
-        glsl-shaders = "~~/shaders/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K_Upscale_Denoise_CNN_x2_VL.glsl:~~/shaders/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl";
-      };
-
       hfr = {
         profile-desc = "High frame rate content";
-        profile-cond = "(p[\"estimated-vf-fps\"] >= 55) and (width < 3840 or height < 2160)";
+        profile-cond = "p[\"estimated-vf-fps\"] >= 55";
         profile-restore = "copy";
         deband = "no";
         deband-iterations = "0";

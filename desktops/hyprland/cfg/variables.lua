@@ -5,6 +5,7 @@ V.terminal                = "kitty"
 V.browser                 = "helium"
 V.editor                  = "zeditor"
 V.fileManager             = "kitty -e fish -ic yazi"
+V.fileManager2            = "nautilus"
 V.vpn                     = "flatpak run com.surfshark.Surfshark"
 V.aria                    = "hermes-desktop"
 

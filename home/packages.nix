@@ -31,6 +31,8 @@ with pkgs;
   ffmpegthumbnailer
   mkvtoolnix-cli
   gpu-screen-recorder
+  tauon
+  nicotine-plus
   eza
   zoxide
   fzf

@@ -23,7 +23,6 @@
       };
       experiments.enable = true;
       fixSpotifyEmbeds.enable = true;
-      imageZoom.enable = true;
       messageLogger.enable = true;
       moreUserTags = {
         tagSettings = {

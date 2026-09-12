@@ -168,6 +168,9 @@
         abbr s sudo
         abbr k pkill -9
         abbr yt yt-dlp
+        abbr u 'nh os switch ~/nixos -u'
+        abbr nc 'nh clean all'
+        abbr fu 'flatpak update'
 
       end
     '';
