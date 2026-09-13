@@ -17,6 +17,7 @@
     ../../modules/nixos/xdg.nix
     ../../modules/nixos/environment.nix
     ../../modules/nixos/gaming.nix
+    ../../modules/nixos/sysctl.nix
   ];
 
   networking.hostName = config.axioncs.hostname;

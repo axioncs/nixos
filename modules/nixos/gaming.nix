@@ -11,9 +11,26 @@
     extraCompatPackages = with pkgs; [ proton-cachyos ];
   };
 
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      general = {
+        renice = 10;
+      };
+      gpu = {
+        apply_gpu_optimisations = "accept-responsibility";
+        gpu_device = 0;
+        amd_performance_level = "high";
+      };
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     libusb1
     usbutils
+    mangohud
+    goverlay
+    umu-launcher
   ];
 
   services.udev.extraRules = ''
@@ -27,5 +44,6 @@
   services.scx = {
     enable = true;
     scheduler = "scx_bpfland";
+    extraArgs = [ "-m" "performance" ];
   };
 }

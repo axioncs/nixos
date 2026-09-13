@@ -189,4 +189,5 @@ hl.window_rule({
 hl.window_rule({
     match = { class = "gamescope" },
     workspace = 5,
+    fullscreen = true,
 })

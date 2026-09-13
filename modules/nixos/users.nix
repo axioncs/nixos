@@ -15,6 +15,7 @@
       "plugdev"
       "i2c"
       "bluetooth"
+      "gamemode"
     ];
   };
 

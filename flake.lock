@@ -229,11 +229,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789311667,
-        "narHash": "sha256-AHjqAlQ5CoNR+3Y6NqASoQXCwJTqYPDaVIlt913Mv/E=",
+        "lastModified": 1789320570,
+        "narHash": "sha256-1Js4AJiWLV7U1SF3ok0J2tKbBEJYE5YpElGU+7fMbfo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7e3645c737e803fcc98e27bc99c5835c700836f2",
+        "rev": "87b3c74df02a2b2e691a24f3c82774f48a70c1bd",
         "type": "github"
       },
       "original": {
@@ -273,11 +273,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1789313595,
-        "narHash": "sha256-k7Va1YhsVcZRhk07YIbb8AsVC6s3z9cbKG9gByN3ePo=",
+        "lastModified": 1789317563,
+        "narHash": "sha256-Qi+UgDQM0B8mgzVMDVZStTZXhGcGlLPzxdz3N4HlIcA=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "3232a8b347365fda343cb2c02127b75d56a9ed07",
+        "rev": "b50e9da9ef937bcb733d84bdff5b8a0fdc7cc57e",
         "type": "github"
       },
       "original": {
@@ -476,11 +476,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1789312192,
-        "narHash": "sha256-QKyCdWsdlZnjdiWKxwwi1yQIiApr7ePu3zFrAeJt8u4=",
+        "lastModified": 1789325869,
+        "narHash": "sha256-M3L6BwNwpVWvg0b12YkHUrNKtzX9I0Z09TS83tPafgc=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "c7ae83c3cf7769d90367e22156d432a31c6f7af6",
+        "rev": "4011887477bdaa1e452cc8770ec696977fffde15",
         "type": "github"
       },
       "original": {
@@ -518,11 +518,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789313909,
-        "narHash": "sha256-d8ZPsblvF4bEOh2zZ66oLEHgnQYl7ecRsp364GtIY4s=",
+        "lastModified": 1789328560,
+        "narHash": "sha256-t/DCzl8bDibWnwWr5EQ8JIDcfSP59PgiEzcWTGEdjJ0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "6d30c1175f563686b77ab8a3b1f61168475a2496",
+        "rev": "fd4a66cea3a1078618e91cb1685aa324641d2ddb",
         "type": "github"
       },
       "original": {
@@ -697,11 +697,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1789312636,
-        "narHash": "sha256-owW8bVdzwIu1Gh0qZcCXIvdocxZnrWWmZXVKGnKbVpA=",
+        "lastModified": 1789317425,
+        "narHash": "sha256-/dSxHAk4IzlsYBqR2MnoM8AgSB6LcJGbgzJV7C3xC0w=",
         "owner": "axioncs",
         "repo": "twintaillauncher-flake",
-        "rev": "331964f16c65a113a276eecc1cc0e3c1cc1ffb7d",
+        "rev": "a06287a73c0b9f3b975032d9416f9d5c6c0032e1",
         "type": "github"
       },
       "original": {
