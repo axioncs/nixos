@@ -104,7 +104,7 @@ hl.window_rule({
 
 -- File pickers
 hl.window_rule({
-    match    = { title = "^(Pick game to add|Open File|Location|Open Files|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename)$" },
+    match    = { title = "^(Pick game to add|Open File|Location|Open Files|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename|Select what to share)$" },
     float    = true,
     center   = true,
     decorate = false,

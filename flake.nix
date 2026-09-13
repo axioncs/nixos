@@ -18,6 +18,7 @@
     nixcord.url = "github:4evy/nixcord";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
     custom-packages.url = "github:Rishabh5321/custom-packages-flake";
+    twintaillauncher.url = "github:axioncs/twintaillauncher-flake";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";

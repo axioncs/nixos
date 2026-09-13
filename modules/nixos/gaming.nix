@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   hardware.steam-hardware.enable = true;
+  programs.gamescope.enable = true;
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -13,7 +14,6 @@
   environment.systemPackages = with pkgs; [
     libusb1
     usbutils
-    gamescope
   ];
 
   services.udev.extraRules = ''

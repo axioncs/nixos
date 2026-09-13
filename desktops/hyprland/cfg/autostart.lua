@@ -1,5 +1,5 @@
 hl.on("hyprland.start", function()
-    hl.exec_cmd("noctalia")
+    hl.exec_cmd("noctalia --daemon")
     hl.exec_cmd("systemctl --user start hyprland-session.target")
     hl.exec_cmd("snappy-switcher --daemon")
     hl.exec_cmd("udiskie --no-tray --automount --notify &")

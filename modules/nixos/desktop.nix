@@ -2,6 +2,7 @@
 
 {
   hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
 
   programs.dconf.enable = true;
 

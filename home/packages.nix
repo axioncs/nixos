@@ -63,6 +63,7 @@ with pkgs;
   texliveBasic
   texlab
   android-tools
+  inputs.twintaillauncher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.stremio-enhanced
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.mangayomi
