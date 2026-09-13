@@ -7,6 +7,8 @@
 
 with pkgs;
 [
+  corefonts
+  onlyoffice-desktopeditors
   noctaliaPackage
   kitty
   nwg-look

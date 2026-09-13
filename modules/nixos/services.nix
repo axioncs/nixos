@@ -14,6 +14,15 @@
     packages = with pkgs; [ bluez ];
   };
 
+  services.ananicy = {
+    enable = true;
+    package = pkgs.ananicy-cpp;
+    rulesProvider = pkgs.ananicy-rules-cachyos;
+    settings = {
+      x3d_mode = "off";
+    };
+  };
+
   services.logind.settings.Login = {
   HandleLidSwitch = "suspend";
   HandleLidSwitchDocked = "ignore";

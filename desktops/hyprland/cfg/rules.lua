@@ -153,7 +153,11 @@ hl.window_rule({
     move     = { "monitor_w - window_w - 10", "monitor_h - window_h - 10" },
 })
 
-
+hl.window_rule({
+    match = { class = "DesktopEditors" },
+    float = true,
+    center = true,
+})
 
 -- imv: floating image viewer
 hl.window_rule({
