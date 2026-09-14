@@ -67,6 +67,6 @@ with pkgs;
   inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.stremio-enhanced
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.mangayomi
-  nur.repos.claymorwan.shimelinux
+  inputs.wl-shimeji.packages.${pkgs.stdenv.hostPlatform.system}.default
   nur.repos.Ev357.hayase
 ]

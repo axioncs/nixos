@@ -37,6 +37,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    wl-shimeji = {
+      url = "git+https://github.com/CluelessCatBurger/wl_shimeji?submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     snappy-switcher = {
       url = "github:OpalAayan/snappy-switcher";
     };

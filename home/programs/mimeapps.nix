@@ -53,7 +53,7 @@
 
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
 
-      "text/plain" = [ "helix.desktop" ];
+      "text/plain" = [ "dev.zed.Zed.desktop" ];
     };
   };
 }
