@@ -68,5 +68,6 @@ with pkgs;
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.stremio-enhanced
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.mangayomi
   inputs.wl-shimeji.packages.${pkgs.stdenv.hostPlatform.system}.default
+  inputs.amethyst-mod-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
   nur.repos.Ev357.hayase
 ]

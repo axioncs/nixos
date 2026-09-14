@@ -20,13 +20,18 @@
     custom-packages.url = "github:Rishabh5321/custom-packages-flake";
     twintaillauncher.url = "github:axioncs/twintaillauncher-flake";
 
+    amethyst-mod-manager = {
+      url = "github:ChrisDKN/Amethyst-Mod-Manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
+    qylock = {
+      url = "github:axioncs/qylock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -58,6 +63,7 @@
       nixpkgs,
       home-manager,
       chaotic,
+      qylock,
       ...
     }@inputs:
 
@@ -88,6 +94,7 @@
 
           home-manager.nixosModules.home-manager
           chaotic.nixosModules.default
+          qylock.nixosModules.default
 
           (
             { ... }:

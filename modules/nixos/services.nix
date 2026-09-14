@@ -33,7 +33,7 @@
 
   services.accounts-daemon.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
   programs.seahorse.enable = true;
   services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;

@@ -7,8 +7,6 @@ rec {
     "labwc"
   ];
 
-  usesGreetd = desktop: true;
-
   greeterSession = desktop:
     {
       hyprland = "Hyprland";

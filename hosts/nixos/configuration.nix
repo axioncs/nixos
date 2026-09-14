@@ -11,7 +11,7 @@
     ../../modules/nixos/users.nix
     ../../modules/nixos/packages.nix
     ../../modules/nixos/desktop.nix
-    ../../modules/nixos/greeter.nix
+    ../../modules/nixos/sddm.nix
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/services.nix
     ../../modules/nixos/xdg.nix
