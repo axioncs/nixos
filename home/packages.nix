@@ -27,6 +27,7 @@ with pkgs;
   zathura
   imv
   songrec
+  easyeffects
   yt-dlp
   aria2
   imagemagick
