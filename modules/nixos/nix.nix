@@ -41,6 +41,9 @@
    '';
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-41.10.6"
+  ];
 
   programs.nix-ld.enable = true;
 

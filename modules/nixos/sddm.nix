@@ -12,7 +12,7 @@
 
   programs.qylock = {
     enable = true;
-    theme = "Material-you-dark";
+    theme = "Lain";
   };
 
   environment.systemPackages = with pkgs; [

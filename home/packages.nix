@@ -9,6 +9,13 @@ with pkgs;
 [
   corefonts
   onlyoffice-desktopeditors
+  R
+  rPackages.languageserver
+  rPackages.tidyverse
+  rPackages.extraDistr
+  rPackages.statmod
+  rstudio
+  mathematica
   noctaliaPackage
   kitty
   nwg-look
