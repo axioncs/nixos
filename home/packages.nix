@@ -5,16 +5,22 @@
   ...
 }:
 
+let
+  myRPackages = with pkgs.rPackages; [
+    languageserver
+    tidyverse
+    extraDistr
+    statmod
+  ];
+  R-with-packages = pkgs.rWrapper.override { packages = myRPackages; };
+  RStudio-with-packages = pkgs.rstudioWrapper.override { packages = myRPackages; };
+in
 with pkgs;
 [
   corefonts
   onlyoffice-desktopeditors
-  R
-  rPackages.languageserver
-  rPackages.tidyverse
-  rPackages.extraDistr
-  rPackages.statmod
-  rstudio
+  R-with-packages
+  RStudio-with-packages
   mathematica
   noctaliaPackage
   kitty
