@@ -19,6 +19,7 @@
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
     custom-packages.url = "github:Rishabh5321/custom-packages-flake";
     twintaillauncher.url = "github:axioncs/twintaillauncher-flake";
+    llauncher.url = "github:axioncs/llauncher-flake";
 
     amethyst-mod-manager = {
       url = "github:ChrisDKN/Amethyst-Mod-Manager";
