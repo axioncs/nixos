@@ -8,10 +8,10 @@ Personal NixOS flake config (Hyprland desktop, home-manager, etc).
 
 1. Boot a NixOS installer, partition your disks, mount at `/mnt`.
 
-2. Clone the config:
+2. Clone the config directly into the target system:
    ```sh
-   git clone https://github.com/axioncs/nixos /home/nixos
-   cd /home/nixos
+   git clone https://github.com/axioncs/nixos /mnt/home/<your-username>/nixos
+   cd /mnt/home/<your-username>/nixos
    ```
 
 3. Regenerate hardware config for this machine:
@@ -37,12 +37,17 @@ Personal NixOS flake config (Hyprland desktop, home-manager, etc).
    sudo nixos-install --flake .#nixos
    ```
 
-7. Reboot, log in, then apply home-manager (should happen automatically as part of the system activation via the flake, but to re-apply manually):
+7. Give ownership of the flakes directory to your user:
+   ```sh
+   sudo chown -R <your-username>:users /mnt/home/<your-username>/nixos
+   ```
+
+8. Reboot, log in, then apply home-manager (should happen automatically as part of the system activation via the flake, but to re-apply manually):
    ```sh
    nh os switch ~/nixos
    ```
 
-8. Once you're on the desktop, run `hyprctl monitors` and update the hardcoded monitor names/resolutions/scale in `desktops/hyprland/cfg/display.lua` (`eDP-1`, `HDMI-A-1`, etc) to match your actual outputs.
+9. Once you're on the desktop, run `hyprctl monitors` and update the hardcoded monitor names/resolutions/scale in `desktops/hyprland/cfg/display.lua` (`eDP-1`, `HDMI-A-1`, etc) to match your actual outputs.
 
 ## Rebuilding after changes
 
@@ -55,12 +60,12 @@ Edit config files with `hx` (Helix).
 ## Credits
 
 Built on top of / pulls from:
-- [noctalia-dev/noctalia](https://github.com/noctalia-dev/noctalia) and [noctalia-greeter](https://github.com/noctalia-dev/noctalia-greeter)
+- [noctalia-dev/noctalia](https://github.com/noctalia-dev/noctalia)
 - [numtide/llm-agents.nix](https://github.com/numtide/llm-agents.nix)
 - [OpalAayan/snappy-switcher](https://github.com/OpalAayan/snappy-switcher)
 - [chaotic-cx/nyx](https://github.com/chaotic-cx/nyx) (CachyOS kernel)
 - [Gerg-L/spicetify-nix](https://github.com/Gerg-L/spicetify-nix)
-- [youwen5/zen-browser-flake](https://github.com/youwen5/zen-browser-flake)
+- [oxcl/nix-flake-helium-browser](https://github.com/oxcl/nix-flake-helium-browser)
 - [nix-community/home-manager](https://github.com/nix-community/home-manager) and [NUR](https://github.com/nix-community/NUR)
 
 ## License

@@ -168,7 +168,7 @@
         settings_window_translucent = true;
         telemetry_enabled = true;
 
-        greeter_sync.auto_sync = true;
+        greeter_sync.auto_sync = false;
 
         panel = {
           borders = false;

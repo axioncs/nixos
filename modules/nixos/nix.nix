@@ -30,11 +30,14 @@
       netrc-file = "/etc/nix-secrets/netrc";
     };
 
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 5d";
-  };
+    programs.nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        dates = "daily";
+        extraArgs = "--keep-since 3d --keep 3";
+      };
+    };
 
   nix.extraOptions = ''
     !include /etc/nix-secrets/github-token.conf
