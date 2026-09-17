@@ -89,15 +89,59 @@ in
 
     scripts = with pkgs.mpvScripts; [
       thumbfast
-      modernx-zydezu
+      modernz
     ];
 
     scriptOpts = {
-      modernx = {
-        vid_scale = "no";
-        scale_windowed = "1.5";
-        scale_fullscreen = "1.5";
-        scale_forced_window = "1.5";
+      modernz = {
+        # Layout / theme
+        layout = "default";
+        icon_theme = "material";
+        icon_style = "mixed";
+        seekbar_height = "medium";
+        nibbles_style = "gap";
+
+        # Scaling
+        vidscale = "auto";
+        scalewindowed = "1.0";
+        scalefullscreen = "1.0";
+
+        # Colors — black/purple palette, semi-transparent OSC
+        osc_color = "#12071F";
+        seekbarfg_color = "#A970FF";
+        seekbarbg_color = "#3A2A52";
+        seekbar_cache_color = "#5B3E85";
+        seek_handle_color = "#C9A6FF";
+        seek_handle_border_color = "#A970FF";
+        nibble_color = "#8B5CF6";
+        nibble_current_color = "#E9D8FF";
+        ab_loop_color = "#7C3AED";
+
+        title_color = "#F3EBFF";
+        chapter_title_color = "#D9C7FF";
+        time_color = "#E4D4FF";
+        cache_info_color = "#E4D4FF";
+
+        side_buttons_color = "#E9D8FF";
+        middle_buttons_color = "#E9D8FF";
+        playpause_color = "#FFFFFF";
+        held_element_color = "#7C3AED";
+        hover_effect_color = "#A970FF";
+
+        window_title_color = "#F3EBFF";
+        window_controls_color = "#E9D8FF";
+        windowcontrols_close_hover = "#F45C5B";
+        windowcontrols_max_hover = "#C9A6FF";
+        windowcontrols_min_hover = "#8B5CF6";
+
+        thumbnail_box_color = "#150A24";
+        thumbnail_box_outline = "#4C2E7A";
+
+        # Semi-transparent OSC/window fade (lower = more transparent)
+        osc_fade_strength = "80";
+        fade_blur_strength = "60";
+        window_fade_strength = "80";
+        window_fade_blur_strength = "60";
       };
 
       discord = {
