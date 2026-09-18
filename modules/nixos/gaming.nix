@@ -31,6 +31,9 @@
     mangohud
     goverlay
     umu-launcher
+    protontricks
+    winetricks
+    vulkan-tools
   ];
 
   services.udev.extraRules = ''

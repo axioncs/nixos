@@ -18,7 +18,6 @@ in
 with pkgs;
 [
   corefonts
-  onlyoffice-desktopeditors
   R-with-packages
   RStudio-with-packages
   mathematica
@@ -31,11 +30,10 @@ with pkgs;
   adw-gtk3
   papirus-icon-theme
   whatsapp-electron
-  transmission_4-gtk
+  qbittorrent
   localsend
   protonplus
   nautilus
-  file-roller
   faugus-launcher
   zathura
   imv
@@ -78,10 +76,8 @@ with pkgs;
   texlab
   android-tools
   inputs.twintaillauncher.packages.${pkgs.stdenv.hostPlatform.system}.default
-  inputs.llauncher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.stremio-enhanced
-  inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.mangayomi
   inputs.wl-shimeji.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.amethyst-mod-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
   nur.repos.Ev357.hayase

@@ -53,10 +53,10 @@ V.cursor_hide_on_type     = true
 V.cursor_inactive_secs    = 1
 
 -- Animations
-V.anim_windows_speed      = 3.5
-V.anim_workspace_speed    = 3.8
-V.anim_layer_speed        = 3.0
-V.anim_fade_speed         = 2.5
+V.anim_windows_speed      = 5.5
+V.anim_layer_speed        = 4.5
+V.anim_fade_speed         = 4.0
+V.anim_workspace_speed    = 5.0
 
 -- Special workspaces
 V.scratchpad_discord_size = { 1600, 900 } -- fixed px (matches your window rule)

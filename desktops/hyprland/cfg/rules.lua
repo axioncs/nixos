@@ -59,7 +59,7 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace        = "special:torrent",
-    on_created_empty = "transmission-gtk",
+    on_created_empty = "qbittorrent",
 })
 
 hl.window_rule({
@@ -86,7 +86,13 @@ hl.window_rule({
     size      = V.scratchpad_discord_size,
 })
 
-
+-- qBittorrent
+hl.window_rule({
+    match     = { class = "^(org.qbittorrent.qBittorrent)$" },
+    workspace = "special:torrent",
+    float     = true,
+    size      = V.scratchpad_discord_size,
+})
 
 -- Spotify → special:spotify scratchpad
 hl.window_rule({
