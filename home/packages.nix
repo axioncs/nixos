@@ -35,7 +35,6 @@ with pkgs;
   protonplus
   nautilus
   faugus-launcher
-  zathura
   imv
   songrec
   easyeffects

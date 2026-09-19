@@ -206,6 +206,7 @@
             "bat"
             "fzf"
             "yazi"
+            "zathura"
           ];
         };
       };
