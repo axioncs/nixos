@@ -24,13 +24,14 @@ end)
 -- Applications
 hl.bind(mod .. " + T", hl.dsp.exec_cmd(V.terminal))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(V.fileManager))
-hl.bind(mod2 .. " + E", hl.dsp.exec_cmd(V.fileManager2))
+hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd(V.fileManager2))
 hl.bind(mod .. " + W", hl.dsp.exec_cmd(V.browser))
 hl.bind(mod .. " + C", hl.dsp.exec_cmd(V.editor))
-hl.bind(mod .. " + M", hl.dsp.exec_cmd("stremio-enhanced"))
-hl.bind(mod .. " + H", hl.dsp.exec_cmd("hayase"))
+
+hl.bind(mod .. " + H", hl.dsp.exec_cmd("harbor"))
 hl.bind(mod2 .. " + G", hl.dsp.exec_cmd("faugus-launcher"))
 hl.bind(mod2 .. " + A", hl.dsp.exec_cmd("twintaillauncher"))
+hl.bind(mod2 .. " + S", hl.dsp.exec_cmd("tauon"))
 
 --  Hypr Scipts
 hl.bind("CTRL + " .. mod .. " + A", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-lens"))
@@ -146,7 +147,7 @@ hl.bind("Print", hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen"), { locked
 hl.bind("CTRL + Print", hl.dsp.exec_cmd("noctalia msg screenshot-region"), { locked = true })
 
 --  Exit / Power
-hl.bind(mod .. " + SHIFT + E", hl.dsp.exit())
+hl.bind(mod .. " + SHIFT + Escape", hl.dsp.exit())
 
 hl.bind(mod .. " + SHIFT + P", function()
     hl.timer(function()

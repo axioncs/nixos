@@ -9,17 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     llm-agents.url = "github:numtide/llm-agents.nix";
     nixcord.url = "github:4evy/nixcord";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
-    custom-packages.url = "github:Rishabh5321/custom-packages-flake";
+    harbor.url = "github:axioncs/harbor-flake";
     twintaillauncher.url = "github:axioncs/twintaillauncher-flake";
-    llauncher.url = "github:axioncs/llauncher-flake";
 
     amethyst-mod-manager = {
       url = "github:ChrisDKN/Amethyst-Mod-Manager";

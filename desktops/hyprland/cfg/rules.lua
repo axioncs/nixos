@@ -34,7 +34,7 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace        = "special:spotify",
-    on_created_empty = "env -u DISPLAY spotify",
+    on_created_empty = "spotify",
 })
 
 hl.workspace_rule({
@@ -183,17 +183,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "^(twintaillauncher|stremio-enhanced|hayase|Vortex|steam_proton)$" },
+    match = { class = "^(twintaillauncher|stremio-enhanced|hayase|steam_proton|harbor)$" },
     maximize = true,
 })
 
 hl.window_rule({
-    match = { class = "^(Vortex)$" },
-    suppress_event = "activate",
-})
-
-hl.window_rule({
     match = { class = "gamescope" },
-    workspace = 5,
     fullscreen = true,
 })

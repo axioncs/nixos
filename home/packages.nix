@@ -74,10 +74,9 @@ with pkgs;
   texliveBasic
   texlab
   android-tools
+  inputs.harbor.packages.${pkgs.stdenv.hostPlatform.system}.beta
   inputs.twintaillauncher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default
-  inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.stremio-enhanced
   inputs.wl-shimeji.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.amethyst-mod-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
-  nur.repos.Ev357.hayase
 ]

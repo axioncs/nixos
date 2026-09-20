@@ -18,6 +18,7 @@
     ../../modules/nixos/environment.nix
     ../../modules/nixos/gaming.nix
     ../../modules/nixos/sysctl.nix
+    ../../modules/nixos/waydroid.nix
   ];
 
   networking.hostName = config.axioncs.hostname;

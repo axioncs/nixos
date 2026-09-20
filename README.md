@@ -66,7 +66,7 @@ Built on top of / pulls from:
 - [chaotic-cx/nyx](https://github.com/chaotic-cx/nyx) (CachyOS kernel)
 - [Gerg-L/spicetify-nix](https://github.com/Gerg-L/spicetify-nix)
 - [oxcl/nix-flake-helium-browser](https://github.com/oxcl/nix-flake-helium-browser)
-- [nix-community/home-manager](https://github.com/nix-community/home-manager) and [NUR](https://github.com/nix-community/NUR)
+- [nix-community/home-manager](https://github.com/nix-community/home-manager)
 
 ## License
 
