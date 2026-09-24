@@ -12,8 +12,21 @@
     llm-agents.url = "github:numtide/llm-agents.nix";
     nixcord.url = "github:4evy/nixcord";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
-    harbor.url = "github:axioncs/harbor-flake";
-    twintaillauncher.url = "github:axioncs/twintaillauncher-flake";
+
+    harbor = {
+      url = "github:axioncs/harbor-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    twintaillauncher = {
+      url = "github:axioncs/twintaillauncher-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    snappy-switcher = {
+      url = "github:OpalAayan/snappy-switcher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     amethyst-mod-manager = {
       url = "github:ChrisDKN/Amethyst-Mod-Manager";
@@ -40,10 +53,6 @@
     wl-shimeji = {
       url = "git+https://github.com/CluelessCatBurger/wl_shimeji?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    snappy-switcher = {
-      url = "github:OpalAayan/snappy-switcher";
     };
 
     default-shader-pack = {
