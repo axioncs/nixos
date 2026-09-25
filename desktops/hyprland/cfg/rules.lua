@@ -135,10 +135,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match    = { class = "zen", title = "^Picture-in-Picture$" },
+    match    = { title = "^(Picture-in-Picture|Picture in picture)$" },
     float    = true,
     move     = { "monitor_w - window_w - 10", "monitor_h - window_h - 10" },
     size     = { 320, 200 },
+    pin      = true,
 })
 
 -- Steam: float most windows, but keep the main client tiled
