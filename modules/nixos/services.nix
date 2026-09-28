@@ -3,9 +3,6 @@
 {
   imports = [ inputs.surfshark.nixosModules.default ];
 
-  programs.hyprland = {
-    enable = true;
-  };
   security.polkit.enablePkexecWrapper = true;
 
   hardware.enableRedistributableFirmware = true;
