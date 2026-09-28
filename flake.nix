@@ -18,6 +18,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    surfshark = {
+      url = "github:axioncs/surfshark-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     twintaillauncher = {
       url = "github:axioncs/twintaillauncher-flake";
       inputs.nixpkgs.follows = "nixpkgs";

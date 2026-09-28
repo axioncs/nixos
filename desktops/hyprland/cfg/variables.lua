@@ -6,7 +6,7 @@ V.browser                 = "helium"
 V.editor                  = "zeditor"
 V.fileManager             = "kitty -e fish -ic yazi"
 V.fileManager2            = "nautilus"
-V.vpn                     = "flatpak run com.surfshark.Surfshark"
+V.vpn                     = "surfshark"
 V.aria                    = "hermes-desktop"
 
 -- Mod key

@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  imports = [ inputs.surfshark.nixosModules.default ];
+
   programs.hyprland = {
     enable = true;
   };
@@ -35,7 +37,7 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
   programs.seahorse.enable = true;
-  services.flatpak.enable = true;
+  services.surfshark-vpn.enable = true;
   services.power-profiles-daemon.enable = true;
   services.printing.enable = false;
   services.gvfs.enable = true;
