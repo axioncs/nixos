@@ -1,4 +1,7 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
+let
+  assets = "${config.home.homeDirectory}/nixos/assets";
+in
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
@@ -27,6 +30,8 @@
         enabled = true;
         reserve_space = false;
       };
+
+      location.auto_locate = true;
 
       lockscreen_widgets = {
         enabled = true;
@@ -158,6 +163,7 @@
       plugins.enabled = [ "noctalia/wallhaven" ];
 
       shell = {
+        avatar_path = "${assets}/icons/face.jpg";
         button_borders = false;
         card_borders = false;
         corner_radius_scale = 1.3;
@@ -165,10 +171,9 @@
         input_borders = false;
         polkit_agent = true;
         popup_borders = false;
+        screen_time_enabled = true;
         settings_window_translucent = true;
         telemetry_enabled = true;
-
-        greeter_sync.auto_sync = false;
 
         panel = {
           borders = false;
@@ -178,11 +183,11 @@
       };
 
       theme = {
-        community_palette = "Oxocarbon";
+        community_palette = "Catppuccin Frappe Rosewater";
         mode = "dark";
         pure_black_dark = true;
         source = "wallpaper";
-        wallpaper_scheme = "m3-tonal-spot";
+        wallpaper_scheme = "faithful";
 
         templates = {
           enable_builtin_templates = true;
@@ -205,14 +210,27 @@
             "snappy-switcher"
             "bat"
             "fzf"
+            "lazygit"
             "yazi"
             "zathura"
           ];
         };
       };
 
+      wallpaper = {
+        directory = "${assets}/Wallpapers";
+        default.path = "${assets}/Wallpapers/wallhaven-o3km89.png";
+        last.path = "${assets}/Wallpapers/wallhaven-o3km89.png";
+        monitors.eDP-1.path = "${assets}/Wallpapers/wallhaven-o3km89.png";
+      };
+
       widget = {
         clock.format = "{:%H:%M} {:%a}, {:%b %d}";
+
+        launcher = {
+          custom_image = "${assets}/icons/nix.png";
+          custom_image_colorize = true;
+        };
 
         media = {
           hide_when_no_media = true;
