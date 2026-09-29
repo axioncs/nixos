@@ -19,7 +19,7 @@ hl.layer_rule({
 
 hl.workspace_rule({
     workspace        = "special:discord",
-    on_created_empty = "discord",
+    on_created_empty = "discordptb",
 })
 
 hl.workspace_rule({

@@ -182,7 +182,7 @@
         mode = "dark";
         pure_black_dark = true;
         source = "wallpaper";
-        wallpaper_scheme = "m3-fruit-salad";
+        wallpaper_scheme = "m3-tonal-spot";
 
         templates = {
           enable_builtin_templates = true;

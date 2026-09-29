@@ -44,5 +44,12 @@
     x11.enable = true;
   };
 
+  xdg.desktopEntries.aula-s75pro = {
+  name = "AULA S75 Pro";
+  exec = "aula-s75pro";
+  terminal = false;
+  categories = [ "Utility" ];
+  };
+
   programs.home-manager.enable = true;
 }

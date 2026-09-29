@@ -1,9 +1,23 @@
 { inputs, pkgs, ... }:
+let
+  oldPkgs = import inputs.nixpkgs-discord {
+    system = pkgs.stdenv.hostPlatform.system;
+    config.allowUnfree = true;
+  };
+in
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
   programs.nixcord = {
     enable = true;
-    discord.equicord.enable = true;
+    discord = {
+      branches = [ "ptb" ];
+      equicord.enable = true;
+      krisp.enable = true;
+      package = oldPkgs.callPackage "${inputs.nixcord}/pkgs/discord" {
+        openasar = oldPkgs.openasar;
+        branch = "ptb";
+      };
+    };
     config.plugins = {
       alwaysAnimate.enable = true;
       anonymiseFileNames.enable = true;

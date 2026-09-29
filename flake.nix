@@ -11,6 +11,7 @@
 
     llm-agents.url = "github:numtide/llm-agents.nix";
     nixcord.url = "github:4evy/nixcord";
+    nixpkgs-discord.url = "github:NixOS/nixpkgs/76ef4f45c14940b1632c32bef9c20476fa58fe7e";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
 
     harbor = {
