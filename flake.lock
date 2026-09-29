@@ -61,11 +61,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1790610543,
-        "narHash": "sha256-OIbWe7rANBR3nscjPOqPOn4QlPNJhqqkhB35ZiLa7rU=",
+        "lastModified": 1790670980,
+        "narHash": "sha256-sJBXp4sPVnI960+iZrvKekGglOjgWJz0y+IZOgetuuY=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "ff3c71b06466357121cdc00ebd71a6b7085dc77e",
+        "rev": "9e2ba4b2e416c8262eec1bcb8348eef741019b9c",
         "type": "github"
       },
       "original": {
@@ -408,11 +408,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1790655436,
-        "narHash": "sha256-EDRksG2GGNSqt/Rsa6uH1dorEtQjuzhzO3x3jlOqn+8=",
+        "lastModified": 1790703588,
+        "narHash": "sha256-qPR/PDUkdF3ZcgStDFC01iAsgEqcIbrMcT/SRGmORcg=",
         "owner": "4evy",
         "repo": "nixcord",
-        "rev": "bdda824e0161df2640075a585ebac4c5da2cfa98",
+        "rev": "5410af311dbcd478a5c9c5ebe74b730d60e4eb50",
         "type": "github"
       },
       "original": {
@@ -447,22 +447,6 @@
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-discord": {
-      "locked": {
-        "lastModified": 1790444631,
-        "narHash": "sha256-xVt0wGj3FQ5YkUZnoKNqTspKwInn7PIQ969DAmKEQC0=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "76ef4f45c14940b1632c32bef9c20476fa58fe7e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "76ef4f45c14940b1632c32bef9c20476fa58fe7e",
         "type": "github"
       }
     },
@@ -563,11 +547,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1790649611,
-        "narHash": "sha256-9o6CDjNhdU7SlzZwuw1Cftwv77Lik7PUj/ADTqKZ2j8=",
+        "lastModified": 1790707713,
+        "narHash": "sha256-8UGDQha1Tcv6mlwl16wWkN0FcqpPUcKjp3ZqUY9LeL0=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "9287a782f3422aa8868f71498d8b70f1644a52f2",
+        "rev": "1f39c3d14d9a71460980af570aeda2b39d090bea",
         "type": "github"
       },
       "original": {
@@ -610,7 +594,6 @@
         "llm-agents": "llm-agents",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_4",
-        "nixpkgs-discord": "nixpkgs-discord",
         "noctalia": "noctalia",
         "qylock": "qylock",
         "snappy-switcher": "snappy-switcher",
