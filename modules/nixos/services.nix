@@ -40,6 +40,7 @@
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   services.upower.enable = true;
+  services.envfs.enable = true;
   services.udev.extraRules = ''
       SUBSYSTEM=="net", KERNEL=="wlan*", ACTION=="add", RUN+="${pkgs.iw}/bin/iw reg set US"
 

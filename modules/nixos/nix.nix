@@ -36,7 +36,11 @@
   ];
 
   programs.nix-ld.enable = true;
-
+  programs.nix-ld.libraries = with pkgs; [
+    libX11
+    libXi
+    libxkbcommon
+  ];
   zramSwap = {
     enable = true;
     memoryPercent = 100;
