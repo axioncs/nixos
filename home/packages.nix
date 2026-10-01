@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  noctaliaPackage,
   ...
 }:
 
@@ -19,9 +18,7 @@ with pkgs;
 [
   corefonts
   R-with-packages
-  RStudio-with-packages
-  mathematica
-  noctaliaPackage
+# RStudio-with-packages
   kitty
   nwg-look
   libnotify

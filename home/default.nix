@@ -27,7 +27,6 @@
 
   home.packages = import ./packages.nix {
     inherit pkgs inputs;
-    noctaliaPackage = osConfig.axioncs.noctaliaPackage;
   };
 
   home.sessionVariables = {

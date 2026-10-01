@@ -11,7 +11,6 @@
 
     llm-agents.url = "github:numtide/llm-agents.nix";
     nixcord.url = "github:4evy/nixcord";
-    noctalia.url = "github:noctalia-dev/noctalia/cachix";
 
     harbor = {
       url = "github:axioncs/harbor-flake";

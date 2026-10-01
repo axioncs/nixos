@@ -39,7 +39,6 @@ in
     libusb1
     usbutils
     mangohud
-    goverlay
     umu-launcher
     protontricks
     winetricks

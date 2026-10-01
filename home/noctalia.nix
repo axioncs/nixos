@@ -1,12 +1,12 @@
-{ config, inputs, ... }:
+{ config, ... }:
+
 let
   assets = "${config.home.homeDirectory}/nixos/assets";
 in
 {
-  imports = [ inputs.noctalia.homeModules.default ];
-
   programs.noctalia = {
     enable = true;
+    systemd.enable = false;
 
     settings = {
       bar.default = {
