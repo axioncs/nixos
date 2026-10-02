@@ -66,7 +66,6 @@ hl.window_rule({
     match    = { class = ".*" },
     rounding = V.rounding,
     opacity  = string.format("%.2f override %.2f override", V.opacity_focused, V.opacity_unfocused),
-    center   = true,
 })
 
 -- ── Special workspace window rules ───────────────────────────────────────────

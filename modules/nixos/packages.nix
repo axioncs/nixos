@@ -15,6 +15,7 @@
     resvg
     xdg-user-dirs
     ananicy-rules-cachyos_git
+    sbctl
   ] ++ (with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
     hermes-agent
     hermes-desktop

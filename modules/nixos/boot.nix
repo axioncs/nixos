@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
@@ -13,9 +13,14 @@
     "rd.systemd.show_status=false"
     "amdgpu.dcdebugmask=0x10"
   ];
-  boot.loader.systemd-boot.enable = true;
+
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+    configurationLimit = 5;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
   boot.kernelModules = [ "cfg80211" "ntsync" ];
 
   boot.initrd.systemd.enable = true;

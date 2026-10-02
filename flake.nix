@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     llm-agents.url = "github:numtide/llm-agents.nix";
     nixcord.url = "github:4evy/nixcord";
 
@@ -70,6 +75,7 @@
       self,
       nixpkgs,
       home-manager,
+      lanzaboote,
       chaotic,
       qylock,
       ...
@@ -102,6 +108,7 @@
 
           home-manager.nixosModules.home-manager
           chaotic.nixosModules.default
+          lanzaboote.nixosModules.lanzaboote
           qylock.nixosModules.default
 
           (
