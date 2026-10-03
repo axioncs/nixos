@@ -175,8 +175,15 @@ in
         settings_window_translucent = true;
         telemetry_enabled = true;
 
+        launcher = {
+          categories = false;
+          compact = true;
+        };
+
         panel = {
           borders = false;
+          launcher_placement = "attached";
+          launcher_position = "auto";
           open_near_click_control_center = true;
           transparency_mode = "glass";
         };
