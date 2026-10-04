@@ -171,3 +171,9 @@ hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("snappy-switcher next --mod super"))
 
 -- Alt+Tab (workspace-filtered)
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod alt"))
+
+-- Disable all keybinds
+hl.bind("SUPER + Escape", hl.dsp.submap("passthru"))
+hl.define_submap("passthru", function()
+    hl.bind("SUPER + Escape", hl.dsp.submap("reset"))
+end)
