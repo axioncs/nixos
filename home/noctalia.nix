@@ -194,7 +194,7 @@ in
         mode = "dark";
         pure_black_dark = true;
         source = "wallpaper";
-        wallpaper_scheme = "faithful";
+        wallpaper_scheme = "m3-content";
 
         templates = {
           enable_builtin_templates = true;
@@ -226,9 +226,9 @@ in
 
       wallpaper = {
         directory = "${assets}/Wallpapers";
-        default.path = "${assets}/Wallpapers/wallhaven-o3km89.png";
-        last.path = "${assets}/Wallpapers/wallhaven-o3km89.png";
-        monitors.eDP-1.path = "${assets}/Wallpapers/wallhaven-o3km89.png";
+        default.path = "${assets}/Wallpapers/wallhaven-qrpljq.png";
+        last.path = "${assets}/Wallpapers/wallhaven-qrpljq.png";
+        monitors.eDP-1.path = "${assets}/Wallpapers/wallhaven-qrpljq.png";
       };
 
       widget = {
