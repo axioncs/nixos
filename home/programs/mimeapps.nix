@@ -5,11 +5,11 @@
     enable = true;
 
     defaultApplications = {
-      "text/html" = [ "helium.desktop" ];
-      "x-scheme-handler/http" = [ "helium.desktop" ];
-      "x-scheme-handler/https" = [ "helium.desktop" ];
-      "x-scheme-handler/about" = [ "helium.desktop" ];
-      "x-scheme-handler/unknown" = [ "helium.desktop" ];
+      "text/html" = [ "zen-twilight.desktop" ];
+      "x-scheme-handler/http" = [ "zen-twilight.desktop" ];
+      "x-scheme-handler/https" = [ "zen-twilight.desktop" ];
+      "x-scheme-handler/about" = [ "zen-twilight.desktop" ];
+      "x-scheme-handler/unknown" = [ "zen-twilight.desktop" ];
 
       "application/pdf" = [ "org.pwmt.zathura.desktop" ];
 
@@ -46,10 +46,10 @@
       "image/bmp" = [ "imv-dir.desktop" ];
       "image/svg+xml" = [ "imv-dir.desktop" ];
 
-      "application/zip" = [ "org.gnome.FileRoller.desktop" ];
-      "application/x-7z-compressed" = [ "org.gnome.FileRoller.desktop" ];
-      "application/x-tar" = [ "org.gnome.FileRoller.desktop" ];
-      "application/x-rar" = [ "org.gnome.FileRoller.desktop" ];
+      "application/zip" = [ "org.gnome.Nautilus.desktop" ];
+      "application/x-7z-compressed" = [ "org.gnome.Nautilus.desktop" ];
+      "application/x-tar" = [ "org.gnome.Nautilus.desktop" ];
+      "application/x-rar" = [ "org.gnome.Nautilus.desktop" ];
 
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
 

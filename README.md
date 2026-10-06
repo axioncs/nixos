@@ -65,7 +65,7 @@ Built on top of / pulls from:
 - [OpalAayan/snappy-switcher](https://github.com/OpalAayan/snappy-switcher)
 - [chaotic-cx/nyx](https://github.com/chaotic-cx/nyx) (CachyOS kernel)
 - [Gerg-L/spicetify-nix](https://github.com/Gerg-L/spicetify-nix)
-- [oxcl/nix-flake-helium-browser](https://github.com/oxcl/nix-flake-helium-browser)
+- [0xc000022070/zen-browser-flake](https://github.com/0xc000022070/zen-browser-flake)
 - [nix-community/home-manager](https://github.com/nix-community/home-manager)
 
 ## License

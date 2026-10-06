@@ -2,7 +2,7 @@ local V                   = {}
 
 -- Apps
 V.terminal                = "kitty"
-V.browser                 = "helium"
+V.browser                 = "zen-twilight"
 V.editor                  = "zeditor"
 V.fileManager             = "kitty -e fish -ic yazi"
 V.fileManager2            = "nautilus"

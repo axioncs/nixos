@@ -14,6 +14,10 @@
     "amdgpu.dcdebugmask=0x10"
   ];
 
+  boot.extraModprobeConfig = ''
+    options hid_apple fnmode=2
+  '';
+
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.lanzaboote = {
     enable = true;
