@@ -18,11 +18,6 @@
     llm-agents.url = "github:numtide/llm-agents.nix";
     nixcord.url = "github:4evy/nixcord";
 
-    harbor = {
-      url = "github:axioncs/harbor-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     surfshark = {
       url = "github:axioncs/surfshark-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -61,6 +56,11 @@
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    custom-packages = {
+      url = "github:Rishabh5321/custom-packages-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

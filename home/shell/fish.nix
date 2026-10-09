@@ -170,7 +170,7 @@
         abbr yt yt-dlp
         abbr u 'nh os switch ~/nixos -u'
         abbr nc 'nh clean all'
-        abbr fu 'flatpak update'
+        abbr wc 'wl-copy'
 
       end
     '';

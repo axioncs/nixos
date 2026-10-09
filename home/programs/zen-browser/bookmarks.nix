@@ -415,6 +415,63 @@
           }
         ];
       }
+      {
+        name = "Music";
+
+        bookmarks = [
+          {
+            name = "Last.fm";
+            url = "https://www.last.fm/";
+          }
+          {
+            name = "Rate Your Music";
+            url = "https://rateyourmusic.com/";
+          }
+          {
+            name = "MusicBrainz";
+            url = "https://musicbrainz.org/";
+          }
+          {
+            name = "Bandcamp";
+            url = "https://bandcamp.com/";
+          }
+          {
+            name = "Genius";
+            url = "https://genius.com/";
+          }
+
+          {
+            name = "Audio Gear";
+
+            bookmarks = [
+              {
+                name = "Crinacle Graph Tool";
+                url = "https://graph.hangout.audio/";
+              }
+              {
+                name = "Squiglink";
+                url = "https://squig.link/";
+              }
+              {
+                name = "AutoEq";
+                url = "https://autoeq.app/";
+              }
+              {
+                name = "Audio Science Review";
+                url = "https://www.audiosciencereview.com/";
+              }
+              {
+                name = "RTINGS Headphones";
+                url = "https://www.rtings.com/headphones";
+              }
+              {
+                name = "Head-Fi";
+                url = "https://www.head-fi.org/";
+              }
+            ];
+          }
+        ];
+      }
     ];
   };
 }

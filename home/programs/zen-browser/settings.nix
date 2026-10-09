@@ -12,6 +12,8 @@
       "zen.view.compact.hide-tabbar" = true;
       "zen.urlbar.behavior" = "float";
       "zen.welcome-screen.seen" = true;
+      "browser.search.suggest.enabled" = true;
+      "browser.urlbar.suggest.searches" = true;
     };
   });
 }

@@ -1,5 +1,7 @@
 local V = require("cfg/variables")
 
+local maximized = "^(twintaillauncher|stremio-enhanced|hayase|steam_proton|harbor)$"
+
 hl.workspace_rule({ workspace = "1", monitor = "eDP-1", persistent = true })
 hl.workspace_rule({ workspace = "2", monitor = "eDP-1", persistent = true })
 hl.workspace_rule({ workspace = "3", monitor = "eDP-1", persistent = true })
@@ -184,8 +186,14 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "^(twintaillauncher|stremio-enhanced|hayase|steam_proton|harbor)$" },
+    match    = { class = maximized, float = false },
     maximize = true,
+})
+
+hl.window_rule({
+    match          = { class = maximized, float = true },
+    center         = true,
+    suppress_event = "fullscreen maximize",
 })
 
 hl.window_rule({

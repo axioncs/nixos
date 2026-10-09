@@ -5,6 +5,7 @@
     inputs.zen-browser.homeModules.twilight
     ./extensions.nix
     ./policies.nix
+    ./ublock.nix
     ./search.nix
     ./bookmarks.nix
     ./settings.nix
