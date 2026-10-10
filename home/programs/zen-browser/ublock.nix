@@ -1,18 +1,16 @@
-{ lib, ... }:
+{ ... }:
 
 let
   id = "uBlock0@raymondhill.net";
-  nl = lib.concatStringsSep "\n";
 
   lists = [
     # built-in
     "user-filters" "ublock-filters" "ublock-badware" "ublock-privacy"
     "ublock-quick-fixes" "ublock-unbreak"
     "easylist" "adguard-mobile"
-    "easyprivacy" "adguard-spyware-url" "block-lan"
+    "easyprivacy" "adguard-spyware-url"
     "urlhaus-1" "plowe-0" "dpollock-0"
-    "easylist-cookies" "fanboy-social"
-    "easylist-chat" "easylist-newsletters" "easylist-notifications"
+    "fanboy-social"
     "easylist-annoyances" "ublock-annoyances"
     # imported
     "https://gitlab.com/DandelionSprout/adfilt/-/raw/master/LegitimateURLShortener.txt"
@@ -30,7 +28,6 @@ let
     "||google-analytics.com^$important"
     "||gravatar.com^$important,third-party"
     "www.reddit.com###redesign-beta-optin-btn"
-    "old.reddit.com###redesign-beta-optin-btn"
   ];
 in
 {
@@ -52,13 +49,6 @@ in
         autoUpdate = true;
       };
       hostnameSwitchesString = "no-csp-reports: * true";
-      hiddenSettingsString = nl [
-        "autoCommentFilterTemplate {{url}}"
-        "autoUpdateDelayAfterLaunch 10"
-        "filterAuthorMode true"
-        "trustedListPrefixes -"
-        "updateAssetBypassBrowserCache true"
-      ];
     };
   };
 }
