@@ -1,9 +1,10 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, ... }:
 
 {
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
+    enableTransience = true;
 
     settings = {
       format = "$username$hostname$directory$fill[$all](grey)$time$line_break$character";
@@ -51,85 +52,99 @@
         style = "bold #777777";
       };
     };
- };
+  };
+
+  # Paths and variables are rebuilt every session (no universal variables).
+  home.sessionVariables.BUN_INSTALL = "$HOME/.bun";
+  home.sessionPath = [
+    "$HOME/.bun/bin"
+    "$HOME/.opencode/bin"
+  ];
 
   programs.fish = {
     enable = true;
 
     plugins = [
-      { name = "done"; src = pkgs.fishPlugins.done.src; }
+      { name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
     ];
 
+    functions = {
+      fish_greeting = "fastfetch";
+
+      history = ''
+        if contains -- "$argv[1]" delete clear clear-session merge save
+            builtin history $argv
+        else
+            builtin history --show-time='%F %T ' $argv
+        end
+      '';
+
+      backup = ''
+        for f in $argv
+            set -l src (string trim -r -c / -- $f)
+            command cp -a -- $src $src.bak-(date +%F-%H%M%S)
+        end
+      '';
+
+      dumpdir = ''
+        set -q argv[1]; or set argv .
+        rg --heading --no-line-number --sort path --hidden -g '!.git' "" $argv
+      '';
+
+      __cpmv_rs = ''
+        set -l mode $argv[1]
+        set -l args $argv[2..-1]
+
+        if test (count $args) -lt 2
+            echo "usage: SRC... DEST"
+            return 1
+        end
+
+        set -l dest $args[-1]
+        set -l srcs (string trim -r -c / -- $args[1..-2])
+        set -l dest_is_dir 0
+        test -d "$dest"; and set dest_is_dir 1
+
+        for s in $srcs
+            if test $dest_is_dir = 1
+                set target $dest/(path basename -- $s)
+            else
+                set target $dest
+            end
+            if test -e "$target"; or test -L "$target"
+                set -l n 1
+                while test -e "$target.~$n~"; or test -L "$target.~$n~"
+                    set n (math $n + 1)
+                end
+                command mv -- "$target" "$target.~$n~"
+                echo "renamed existing: $target -> $target.~$n~"
+            end
+        end
+
+        set -l flags -ah --info=progress2 --partial
+        test $mode = mv; and set flags $flags --remove-source-files
+
+        if test (count $srcs) = 1; and test -d "$srcs[1]"; and test $dest_is_dir = 0
+            rsync $flags -- "$srcs[1]/" "$dest/"
+        else
+            rsync $flags -- $srcs $dest
+        end
+        or return $status
+
+        if test $mode = mv
+            for s in $srcs
+                test -d "$s"; and find "$s" -depth -type d -empty -delete
+            end
+        end
+      '';
+
+      cpr = "__cpmv_rs cp $argv";
+      mvr = "__cpmv_rs mv $argv";
+    };
+
     interactiveShellInit = ''
-      set -gx GPG_TTY (tty)
-      if test -d "$HOME/.bun"
-        set -gx BUN_INSTALL "$HOME/.bun"
-        fish_add_path $BUN_INSTALL/bin
-      end
-      if test -d "$HOME/.opencode/bin"
-        fish_add_path "$HOME/.opencode/bin"
-      end
-
-      set -U __done_min_cmd_duration 10000
-      set -U __done_notification_urgency_level low
-
       set -x MANROFFOPT "-c"
       set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
-      function __history_previous_command
-        switch (commandline -t)
-        case "!"
-          commandline -t $history[1]; commandline -f repaint
-        case "*"
-          commandline -i !
-        end
-      end
-      function __history_previous_command_arguments
-        switch (commandline -t)
-        case "!"
-          commandline -t ""
-          commandline -f history-token-search-backward
-        case "*"
-          commandline -i '$'
-        end
-      end
-      if [ "$fish_key_bindings" = fish_vi_key_bindings ]
-        bind -Minsert ! __history_previous_command
-        bind -Minsert '$' __history_previous_command_arguments
-      else
-        bind ! __history_previous_command
-        bind '$' __history_previous_command_arguments
-      end
-
-      function history
-          builtin history --show-time='%F %T ' $argv
-      end
-      function backup --argument filename
-          cp $filename $filename.bak
-      end
-      function copy
-          set count (count $argv | tr -d \n)
-          if test "$count" = 2; and test -d "$argv[1]"
-              set from (echo $argv[1] | trim-right /)
-              set to (echo $argv[2])
-              command cp -r $from $to
-          else
-              command cp $argv
-          end
-      end
-
-      function fish_greeting
-         fastfetch
-      end
-
-      function y
-	        set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	        command yazi $argv --cwd-file="$tmp"
-	        if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
-		        builtin cd -- "$cwd"
-	        end
-	        command rm -f -- "$tmp"
-      end
 
       if status is-interactive
         command -v direnv &>/dev/null && direnv hook fish | source
@@ -140,10 +155,10 @@
         alias bat="bat --style=plain"
         alias cat="bat --style=plain"
 
-        alias ls='eza -al --color=always --group-directories-first --icons=always'
-        alias la='eza -a --color=always --group-directories-first --icons=always'
-        alias ll='eza -l --color=always --group-directories-first --icons=always'
-        alias lt='eza -aT --color=always --group-directories-first --icons=always'
+        alias ls='eza -al --color=auto --group-directories-first --icons=auto'
+        alias la='eza -a --color=auto --group-directories-first --icons=auto'
+        alias ll='eza -l --color=auto --group-directories-first --icons=auto'
+        alias lt='eza -aT --color=auto --group-directories-first --icons=auto'
         alias l.="eza -a | grep -e '^\.'"
 
         abbr lg lazygit
@@ -164,22 +179,13 @@
         abbr gsh 'git show'
         abbr l ls
         abbr r reboot
-        abbr sn 'sudo nano'
+        abbr se sudoedit
         abbr s sudo
         abbr k pkill -9
         abbr yt yt-dlp
         abbr u 'nh os switch ~/nixos -u'
-        abbr nc 'nh clean all'
-        abbr wc 'wl-copy'
-
+        abbr cb 'wl-copy'
       end
     '';
   };
-
-  home.activation.removeManagedFishVariables = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    fish_vars="${config.home.homeDirectory}/.config/fish/fish_variables"
-    if [ -L "$fish_vars" ] && readlink "$fish_vars" | grep -q '^/nix/store/'; then
-      $DRY_RUN_CMD rm -f "$fish_vars"
-    fi
-  '';
 }

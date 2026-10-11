@@ -28,7 +28,11 @@
   HandleLidSwitchExternalPower = "ignore";
   HandlePowerKey = "suspend";
   HandlePowerKeyLongPress = "poweroff";
-};
+  };
+  
+  services.journald.settings.Journal = {
+    SystemMaxUse = "200M";
+  };
 
   services.accounts-daemon.enable = true;
   services.gnome.gnome-keyring.enable = true;
