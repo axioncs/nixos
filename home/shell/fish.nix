@@ -4,7 +4,6 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
-    enableTransience = true;
 
     settings = {
       format = "$username$hostname$directory$fill[$all](grey)$time$line_break$character";
