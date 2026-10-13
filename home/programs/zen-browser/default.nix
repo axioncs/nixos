@@ -15,7 +15,5 @@
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
-
-    profiles.dark.id = 1;
   };
 }

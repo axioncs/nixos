@@ -22,7 +22,7 @@
       clean = {
         enable = true;
         dates = "daily";
-        extraArgs = "--keep-since 3d --keep 3";
+        extraArgs = "--keep-since 3d";
       };
     };
 
@@ -31,9 +31,6 @@
    '';
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-41.10.6"
-  ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [

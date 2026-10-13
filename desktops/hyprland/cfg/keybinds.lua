@@ -42,7 +42,6 @@ hl.bind(mod .. " + A", hl.dsp.workspace.toggle_special("aria"))
 
 --  Special workspaces (scratchpads)
 hl.bind(mod .. " + D", hl.dsp.workspace.toggle_special("discord"))
-hl.bind(mod .. " + SHIFT + D", hl.dsp.workspace.toggle_special("whatsapp"))
 hl.bind(mod2 .. " + D", hl.dsp.workspace.toggle_special("equibop"))
 hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
 hl.bind(mod .. " + SHIFT + S", hl.dsp.workspace.toggle_special("vpn"))
