@@ -15,6 +15,12 @@
         model_parameters = [ ];
       };
 
+      agent_servers.hermes-agent = {
+        type = "custom";
+        command = "hermes";
+        args = [ "acp" ];
+      };
+
       auto_install_extensions = {
         discord-presence = true;
       };
