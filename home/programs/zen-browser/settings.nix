@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   programs.zen-browser.profiles.default.settings = {
@@ -13,5 +13,6 @@
     "zen.welcome-screen.seen" = true;
     "browser.search.suggest.enabled" = true;
     "browser.urlbar.suggest.searches" = true;
+    "media.peerconnection.enabled" = lib.mkForce true;
   };
 }
