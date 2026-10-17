@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
   boot.kernelParams = [
     "amd_pstate=active"
     "clearcpuid=514"

@@ -30,7 +30,8 @@ Personal NixOS flake config (Hyprland desktop, home-manager, etc).
 
 5. Handle machine-specific dependencies (skip any that don't apply):
    - `modules/nixos/nix.nix` references `/etc/nix-secrets/netrc` and `/etc/nix-secrets/github-token.conf` for GitHub auth. Create those files, or remove the `netrc-file` line and `extraOptions` block.
-   - `modules/nixos/boot.nix` uses `linuxPackages_cachyos` and AMD-specific kernel params (`amd_pstate=active`). Swap to a stock kernel / adjust params if you're not on AMD or don't want linux-cachyos kernel.
+   - `modules/nixos/boot.nix` uses `linuxPackages_cachyos-lto-znver4` (ThinLTO, built for Zen 4 only; it won't run on other CPUs) and AMD-specific kernel params (`amd_pstate=active`). Swap to `linuxPackages_cachyos` or a stock kernel if you're not on Zen 4.
+   - `modules/nixos/desktop.nix` enables `chaotic.mesa-git` (bleeding-edge Mesa from nyx). Remove it if you want stable Mesa.
 
 6. Install:
    ```sh
@@ -63,7 +64,7 @@ Built on top of / pulls from:
 - [noctalia-dev/noctalia](https://github.com/noctalia-dev/noctalia)
 - [numtide/llm-agents.nix](https://github.com/numtide/llm-agents.nix)
 - [OpalAayan/snappy-switcher](https://github.com/OpalAayan/snappy-switcher)
-- [chaotic-cx/nyx](https://github.com/chaotic-cx/nyx) (CachyOS kernel)
+- [chaotic-cx/nyx](https://github.com/chaotic-cx/nyx) (CachyOS kernel, mesa-git)
 - [Gerg-L/spicetify-nix](https://github.com/Gerg-L/spicetify-nix)
 - [0xc000022070/zen-browser-flake](https://github.com/0xc000022070/zen-browser-flake)
 - [nix-community/home-manager](https://github.com/nix-community/home-manager)

@@ -1,11 +1,12 @@
 { pkgs, inputs, ... }:
 
 let
+  proton = pkgs.proton-cachyos_x86_64_v3;
+
   aula-s75pro = pkgs.writeShellScriptBin "aula-s75pro" ''
     export WINEPREFIX="$HOME/.local/share/aula-prefix"
     export GAMEID=0
-    export PROTONPATH="${pkgs.proton-cachyos}"
-
+    export PROTONPATH="${proton}"
     exec ${pkgs.umu-launcher}/bin/umu-run \
       "$WINEPREFIX/drive_c/Program Files (x86)/S75Pro/DeviceDriver.exe"
   '';
@@ -18,19 +19,24 @@ in
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
-    extraCompatPackages = with pkgs; [ proton-cachyos ];
+    extraCompatPackages = [ proton ];
   };
 
   programs.gamemode = {
     enable = true;
     settings = {
       general = {
-        renice = 10;
+        renice = 0;
+        ioprio = "off";
       };
       gpu = {
         apply_gpu_optimisations = "accept-responsibility";
         gpu_device = 0;
         amd_performance_level = "high";
+      };
+      custom = {
+        start = "${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance";
+        end   = "${pkgs.power-profiles-daemon}/bin/powerprofilesctl set balanced";
       };
     };
   };
@@ -64,10 +70,4 @@ in
   ];
 
   hardware.xpadneo.enable = true;
-
-  services.scx = {
-    enable = true;
-    scheduler = "scx_bpfland";
-    extraArgs = [ "-m" "performance" ];
-  };
 }

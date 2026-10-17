@@ -16,10 +16,7 @@
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
-    rulesProvider = pkgs.ananicy-rules-cachyos;
-    settings = {
-      x3d_mode = "off";
-    };
+    rulesProvider = pkgs.ananicy-rules-cachyos_git;
   };
 
   services.logind.settings.Login = {
@@ -29,7 +26,7 @@
   HandlePowerKey = "suspend";
   HandlePowerKeyLongPress = "poweroff";
   };
-  
+
   services.journald.settings.Journal = {
     SystemMaxUse = "200M";
   };
