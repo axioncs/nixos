@@ -30,7 +30,6 @@ with pkgs;
   localsend
   protonplus
   nautilus
-  faugus-launcher
   imv
   songrec
   easyeffects

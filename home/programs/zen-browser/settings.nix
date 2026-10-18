@@ -9,6 +9,7 @@
     "zen.ctrlTab.show-pending-tabs" = true;
     "zen.workspaces.continue-where-left-off" = true;
     "zen.view.compact.hide-tabbar" = true;
+    "zen.view.compact.toolbar-hide-after-hover.duration" = 60000;
     "zen.urlbar.behavior" = "float";
     "zen.welcome-screen.seen" = true;
     "browser.search.suggest.enabled" = true;

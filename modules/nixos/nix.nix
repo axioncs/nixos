@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   systemd.services.nix-daemon.path = [ pkgs.git ];
@@ -14,8 +14,8 @@
       ];
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
-      netrc-file = "/etc/nix-secrets/netrc";
-    };
+      netrc-file = config.age.secrets.nix-netrc.path;
+  };
 
     programs.nh = {
       enable = true;
@@ -26,9 +26,9 @@
       };
     };
 
-  nix.extraOptions = ''
-    !include /etc/nix-secrets/github-token.conf
-   '';
+    nix.extraOptions = ''
+      !include ${config.age.secrets.nix-github-token.path}
+    '';
 
   nixpkgs.config.allowUnfree = true;
 
