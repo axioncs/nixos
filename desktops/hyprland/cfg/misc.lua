@@ -29,6 +29,13 @@ hl.config({
     },
 })
 
+hl.on("window.active", function(w)
+    local in_gs = w ~= nil and w.class == "gamescope"
+    hl.config({
+        cursor = { inactive_timeout = in_gs and 0 or V.cursor_inactive_secs },
+    })
+end)
+
 -- ── Misc compositor settings ─────────────────────────────────────────────────
 hl.config({
     misc = {
