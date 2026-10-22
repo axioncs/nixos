@@ -2,6 +2,9 @@
 
 let
   assets = "${config.home.homeDirectory}/nixos/assets";
+  batStatus = "/sys/class/power_supply/BAT*/status";
+  onBattery = "grep -qx Discharging ${batStatus}";
+  onAc      = "! ${onBattery}";
 in
 {
   programs.noctalia = {
@@ -156,6 +159,35 @@ in
               format = "{:%a}, {:%b %d}";
               shadow = true;
             };
+          };
+        };
+      };
+
+      idle = {
+        pre_action_fade_seconds = 0;
+
+        behavior = {
+          lock-ac = {
+            timeout = 300;
+            action = "lock";
+          };
+          screen-off-ac = {
+            timeout = 310;
+            action = "command";
+            command = "${onAc} && noctalia msg dpms-off";
+            resume_command = "noctalia msg dpms-on";
+          };
+
+          screen-off-battery = {
+            timeout = 120;
+            action = "command";
+            command = "${onBattery} && noctalia msg dpms-off";
+            resume_command = "noctalia msg dpms-on";
+          };
+          suspend-battery = {
+            timeout = 300;
+            action = "command";
+            command = "${onBattery} && noctalia msg session lock-and-suspend";
           };
         };
       };

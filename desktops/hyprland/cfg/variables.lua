@@ -49,8 +49,8 @@ V.shadow_color            = 0xee1a1a1a
 -- Cursor
 V.cursor_theme            = "Bibata-Modern-Ice"
 V.cursor_size             = 20
-V.cursor_hide_on_type     = true
-V.cursor_inactive_secs    = 3
+V.cursor_hide_on_type     = false
+V.cursor_inactive_secs    = 1
 
 -- Animations
 V.anim_windows_speed      = 5.5
