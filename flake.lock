@@ -117,11 +117,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792688310,
-        "narHash": "sha256-rLzjCu1o/0N0jZ+fEK4q9s4Gitokpsdf9LA9anf1ZJ0=",
+        "lastModified": 1792754127,
+        "narHash": "sha256-+SHpMR242Mmo6HmX2GuySl85Rgfp4D8x7NtUFppCmxg=",
         "owner": "Rishabh5321",
         "repo": "custom-packages-flake",
-        "rev": "dcaeb1829f592bf15d3c477343ac29d2a2d75405",
+        "rev": "9cd047c060ed7dff213187040f3f4d290d9cd915",
         "type": "github"
       },
       "original": {
@@ -154,11 +154,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1792641794,
-        "narHash": "sha256-+L7M0+jNWYB3tW2AeGv3DY0eSc+gKWRLs6PcuwIthek=",
+        "lastModified": 1792728173,
+        "narHash": "sha256-Ky9DXNJOvxbK6GMGuTkQzHiC4dYOuyfOoFvKlBhWChU=",
         "ref": "refs/heads/master",
-        "rev": "5354a6302e31697f560f7b552db8263e61019b64",
-        "revCount": 5006,
+        "rev": "972a75a44c88022030bf2b52adf84fb31ea8bbd0",
+        "revCount": 5008,
         "type": "git",
         "url": "https://gitlab.com/rycee/nur-expressions.git"
       },
@@ -353,11 +353,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792668857,
-        "narHash": "sha256-chUrnAqBhBLvXBUsLFxFYBIl8c0GWp06wdjmAMS8l+U=",
+        "lastModified": 1792703141,
+        "narHash": "sha256-3X34FaSeMJXMx8CK/BN6sZ9knwNauuiJXQhLM+bQQuI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cb7de2c7e589afe7531d4832c71ad4df144624ea",
+        "rev": "6750249c69969d09d952efaf3fab88a2bdac7ec6",
         "type": "github"
       },
       "original": {
@@ -420,11 +420,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1792687927,
-        "narHash": "sha256-O8JsXXPl26uxJ2nITotVnq7FAubqzsK4pWhZuh78bDA=",
+        "lastModified": 1792749267,
+        "narHash": "sha256-99x3Y+gy2X/Uy/Ew9YY9pRf1vphvranqJGBybT74Z6Y=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "24cf271f40105749bb82ad318013c372183ef28e",
+        "rev": "63b55656560b3f6692fb91398b08fe225427a796",
         "type": "github"
       },
       "original": {
@@ -465,11 +465,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1792693177,
-        "narHash": "sha256-wBrYfc/+cCHSIW8IcgFjrEqkya86Xsok1di+Cr3r8DM=",
+        "lastModified": 1792758770,
+        "narHash": "sha256-kQmukkd1BOtEBDbORSe+7yHYZ0RZZYwgBBg4YpDFETc=",
         "owner": "4evy",
         "repo": "nixcord",
-        "rev": "18eee24217ebc5633ebb4f710686276beb2a2c2f",
+        "rev": "d0e167895f5c37c8df66267f14c755c76f6a8242",
         "type": "github"
       },
       "original": {
