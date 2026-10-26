@@ -26,7 +26,6 @@
       window_padding_width = "12 20 12 20";
       mouse_hide_wait = 3.0;
       allow_remote_control = true;
-      confirm_os_window_close = 0;
       notify_on_cmd_finish = "unfocused";
     };
 

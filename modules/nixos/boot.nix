@@ -27,9 +27,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelModules = [ "cfg80211" "ntsync" ];
 
-  boot.initrd.systemd.enable = true;
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.initrd.verbose = false;
   boot.consoleLogLevel = 0;
 
   boot.plymouth.enable = true;

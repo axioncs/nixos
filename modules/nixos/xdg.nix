@@ -14,9 +14,7 @@ let
     pkgs.xdg-desktop-portal-gtk
   ];
 
-  hyprlandPortals = gtkPortals ++ [
-    pkgs.xdg-desktop-portal-hyprland
-  ];
+  hyprlandPortals = gtkPortals;
 
   # Fallback portal for other wlroots-based compositors (like Mango/Umbriel)
   wlrPortals = gtkPortals ++ [
