@@ -14,5 +14,6 @@ in
     nix-github-token = own ../../secrets/nix-github-token.age;
     aria2-rpc = own ../../secrets/aria2-rpc.age;
     steamgriddb = own ../../secrets/steamgriddb.age;
+    navidrome-env.file = ../../secrets/navidrome-env.age;
   };
 }

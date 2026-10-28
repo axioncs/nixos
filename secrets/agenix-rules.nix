@@ -7,4 +7,5 @@ in {
   "nix-github-token.age".publicKeys = all;
   "aria2-rpc.age".publicKeys = all;
   "steamgriddb.age".publicKeys = all;
+  "navidrome-env.age".publicKeys = all;
 }

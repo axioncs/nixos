@@ -39,7 +39,7 @@ with pkgs;
   ffmpegthumbnailer
   mkvtoolnix-cli
   gpu-screen-recorder
-  tauon
+  feishin
   nicotine-plus
   eza
   zoxide

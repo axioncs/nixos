@@ -29,7 +29,7 @@ Axion's NixOS flake config (Hyprland desktop, home-manager, agenix, lanzaboote).
    ```
 
 5. Handle machine-specific dependencies (skip any that don't apply):
-   - `secrets/*.age` are encrypted to the author's keys and won't decrypt for you. Either replace them with your own (see [Secrets](#secrets-agenix)), or remove `modules/nixos/agenix.nix` and its consumers: the `netrc-file`/`extraOptions` lines in `modules/nixos/nix.nix`, the rpc-secret in `home/programs/aria2.nix`, and `steamGridDbKeyFile` in `home/programs/faugus-launcher/default.nix`.
+   - `secrets/*.age` are encrypted to the author's keys and won't decrypt for you. Either replace them with your own (see [Secrets](#secrets-agenix)), or remove `modules/nixos/agenix.nix` and its consumers: the `netrc-file`/`extraOptions` lines in `modules/nixos/nix.nix`, the rpc-secret in `home/programs/aria2.nix`, `steamGridDbKeyFile` in `home/programs/faugus-launcher/default.nix`, and `environmentFile` in `modules/nixos/navidrome.nix`.
    - `modules/nixos/boot.nix` uses `linuxPackages_cachyos-lto-znver4` (ThinLTO, built for Zen 4 only; it won't run on other CPUs) and AMD-specific kernel params (`amd_pstate=active`). Swap to `linuxPackages_cachyos` or a stock kernel if you're not on Zen 4.
    - `modules/nixos/boot.nix` also enables lanzaboote (Secure Boot) and force-disables systemd-boot. Keys must exist before install, see step 6. To skip Secure Boot, drop the `boot.lanzaboote` block and the `systemd-boot` mkForce.
    - `modules/nixos/desktop.nix` enables `chaotic.mesa-git` (bleeding-edge Mesa from nyx). Remove it if you want stable Mesa.
@@ -73,9 +73,19 @@ nh os switch ~/nixos
 
 Edit config files with `hx` (Helix). Flakes ignore untracked files, so `git add` new files before rebuilding.
 
+## Music (Navidrome + Feishin)
+
+Soulseek downloads (Nicotine+) land in `~/Music`. Navidrome (`modules/nixos/navidrome.nix`) indexes that folder and serves it on `127.0.0.1:4533`; Feishin is the client and plays through mpv.
+
+- The service runs as the main user, with `ProtectHome` relaxed to `read-only`, so it can read `~/Music`.
+- Keep Nicotine+'s incomplete-downloads directory outside `~/Music` so only finished files get indexed.
+- First run: open `http://127.0.0.1:4533`, create the admin user, then add the server in Feishin (type Navidrome, same URL).
+- In Feishin, set Settings → Playback → Audio Player to **MPV**.
+- Last.fm: Navidrome does the scrobbling. Enable it under Personal in the web UI, and enable Scrobble in Feishin's playback settings. The API key and secret live in the `navidrome-env` secret.
+
 ## Secrets (agenix)
 
-Encrypted secrets live in `secrets/*.age` and decrypt at activation to `/run/agenix/`. Every secret is encrypted to two recipients, listed in `secrets/secrets.nix`. Declarations are in `modules/nixos/agenix.nix`.
+Encrypted secrets live in `secrets/*.age` and decrypt at activation to `/run/agenix/`. Every secret is encrypted to two recipients, listed in `secrets/agenix-rules.nix`. Declarations are in `modules/nixos/agenix.nix`.
 
 | Key | Location | Purpose |
 |---|---|---|
@@ -90,6 +100,7 @@ Never commit either private key. **Back both up offline.**
 | `nix-github-token` | `modules/nixos/nix.nix` (`!include`, GitHub `access-tokens`) |
 | `aria2-rpc` | `home/programs/aria2.nix` (config is generated at service start) |
 | `steamgriddb` | `home/programs/faugus-launcher/` (merged into `config.json` on activation) |
+| `navidrome-env` | `modules/nixos/navidrome.nix` (`environmentFile`, `ND_LASTFM_*` variables) |
 
 Create, edit or rotate a secret (opens `$EDITOR`):
 
@@ -99,9 +110,9 @@ agenix -i ~/.config/age/keys.txt -e <name>.age
 git add -A; nh os switch ~/nixos
 ```
 
-New secrets also need an entry in `secrets/secrets.nix` and in `age.secrets` in `modules/nixos/agenix.nix`.
+New secrets also need an entry in `secrets/agenix-rules.nix` and in `age.secrets` in `modules/nixos/agenix.nix`.
 
-After changing recipients in `secrets/secrets.nix`, re-encrypt everything:
+After changing recipients in `secrets/agenix-rules.nix`, re-encrypt everything:
 
 ```fish
 agenix -i ~/.config/age/keys.txt -r
@@ -113,7 +124,7 @@ Check a secret decrypts:
 nix shell nixpkgs#age -c age -d -i ~/.config/age/keys.txt <name>.age | wc -c
 ```
 
-Setting up your own keys: generate the personal key with `nix shell nixpkgs#age -c age-keygen -o ~/.config/age/keys.txt`, put its public key (`age-keygen -y`) and the machine public key (`/var/lib/agenix/id_ed25519.pub`) into `secrets/secrets.nix`, delete the old `*.age`, and create each secret with `agenix -e`.
+Setting up your own keys: generate the personal key with `nix shell nixpkgs#age -c age-keygen -o ~/.config/age/keys.txt`, put its public key (`age-keygen -y`) and the machine public key (`/var/lib/agenix/id_ed25519.pub`) into `secrets/agenix-rules.nix`, delete the old `*.age`, and create each secret with `agenix -e`.
 
 Intentionally outside agenix: Hermes API keys (`~/.hermes/.env`) and Surfshark credentials.
 

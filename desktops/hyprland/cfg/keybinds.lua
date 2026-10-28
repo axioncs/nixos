@@ -31,7 +31,7 @@ hl.bind(mod .. " + C", hl.dsp.exec_cmd(V.editor))
 hl.bind(mod .. " + H", hl.dsp.exec_cmd("stremio-enhanced"))
 hl.bind(mod2 .. " + G", hl.dsp.exec_cmd("faugus-launcher"))
 hl.bind(mod2 .. " + A", hl.dsp.exec_cmd("twintaillauncher"))
-hl.bind(mod2 .. " + S", hl.dsp.exec_cmd("tauon"))
+hl.bind(mod2 .. " + S", hl.dsp.exec_cmd("feishin"))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd("aula-s75pro"))
 --  Hypr Scipts
 hl.bind("CTRL + " .. mod .. " + A", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-lens"))
