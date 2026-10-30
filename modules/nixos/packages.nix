@@ -5,6 +5,7 @@
     jq
     iw
     rsync
+    rclone
     unzip
     unrar
     pavucontrol
