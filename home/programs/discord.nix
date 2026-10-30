@@ -54,7 +54,11 @@
           enable = false;
         };
       };
-      noTrack.enable = true;
+      noTrack = {
+        enable = true;
+        disableAnalytics = false;
+        disableStackDumping = false;
+      };
       permissionsViewer.enable = true;
       questify = {
         enable = true;
