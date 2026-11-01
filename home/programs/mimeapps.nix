@@ -10,6 +10,7 @@
       "x-scheme-handler/https" = [ "zen-twilight.desktop" ];
       "x-scheme-handler/about" = [ "zen-twilight.desktop" ];
       "x-scheme-handler/unknown" = [ "zen-twilight.desktop" ];
+      "x-scheme-handler/nxm" = [ "amethystmodmanager-nxm.desktop" ];
 
       "application/pdf" = [ "org.pwmt.zathura.desktop" ];
 
