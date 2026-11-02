@@ -20,26 +20,6 @@
         "type": "github"
       }
     },
-    "amethyst-mod-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1793530194,
-        "narHash": "sha256-Vxa2m6qcaJ/Ve0OtfW8nYrVqNeXn7F5cATz/jGJDAgU=",
-        "owner": "ChrisDKN",
-        "repo": "Amethyst-Mod-Manager",
-        "rev": "d093e23893c3d4b1e7cf7616c3c7578c17ef5be2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ChrisDKN",
-        "repo": "Amethyst-Mod-Manager",
-        "type": "github"
-      }
-    },
     "bun2nix": {
       "inputs": {
         "flake-parts": [
@@ -81,11 +61,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1793464836,
-        "narHash": "sha256-cbZIR/Shhssj4Jg2OVPsy+eudhkPxSyNHF/qP3iGZaw=",
+        "lastModified": 1793521359,
+        "narHash": "sha256-zuOGY+12jayYHg4Y1D3Xo5x/jNfgaikSemB3oqNtxEc=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "39872b702ff1ac3cdde81558e0f36dd36e4e2ba6",
+        "rev": "5ea9b4d2d62a5eb4321002a3b0ee1524b86db299",
         "type": "github"
       },
       "original": {
@@ -117,11 +97,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793481116,
-        "narHash": "sha256-2cRdNi9vzAe/tYKcBYzYu5edz69OUBxsRkZgJUJcw4c=",
+        "lastModified": 1793570216,
+        "narHash": "sha256-F8gHbnCbPY1FyehW+lNbropjWLzfinp1k3E0ZvgX9Ng=",
         "owner": "Rishabh5321",
         "repo": "custom-packages-flake",
-        "rev": "c0fda4be281a7a0f5c81d29feae610bd83af1be1",
+        "rev": "20ce0ce52e326bff2447b4b93081815dc74b9cf5",
         "type": "github"
       },
       "original": {
@@ -420,11 +400,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1793512069,
-        "narHash": "sha256-i4UBJIugcPJxG4xKnlsypbTb8QfPX+kagQYF9oswO/c=",
+        "lastModified": 1793543262,
+        "narHash": "sha256-qPyhfwkt2NA2oodsZ+vzjzyWlD5uv47i2Yd3zZsXPoM=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "8efcba308a6b12a92441cb4df624e484bad9e18a",
+        "rev": "e78ca7f96a07c5d9ab88a34f5e76d544c6d2a299",
         "type": "github"
       },
       "original": {
@@ -465,11 +445,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1793524496,
-        "narHash": "sha256-46kvwxjNCgMM6NQaPI9qDR4XTiZ2AJqosg2dWs5nEDU=",
+        "lastModified": 1793578559,
+        "narHash": "sha256-05dRd7vfSlbFPovb2cM+kw1xORK4vIpzdgmI03qZKbo=",
         "owner": "4evy",
         "repo": "nixcord",
-        "rev": "3cc16a5520810b84b3ebb21416402d3a0620ad34",
+        "rev": "324dd47a6c3280bb5d8be168bc817adb92bcdec3",
         "type": "github"
       },
       "original": {
@@ -624,7 +604,6 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
-        "amethyst-mod-manager": "amethyst-mod-manager",
         "chaotic": "chaotic",
         "custom-packages": "custom-packages",
         "default-shader-pack": "default-shader-pack",
@@ -672,11 +651,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788878136,
-        "narHash": "sha256-UO9tWTCNkpX011xrrxop2FU5Sw5yWcVXDuOVXuxmkxk=",
+        "lastModified": 1793584708,
+        "narHash": "sha256-p7ACqIwIqBtuxDdDOv5Ili58fX9aM0ienO7JdCIIrd4=",
         "owner": "OpalAayan",
         "repo": "snappy-switcher",
-        "rev": "e12ad51aca77e16913723769849804b2a1efb849",
+        "rev": "88b8962e26c1fa22d703c2d7a981fc5696223088",
         "type": "github"
       },
       "original": {

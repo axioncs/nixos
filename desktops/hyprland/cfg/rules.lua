@@ -19,45 +19,24 @@ hl.layer_rule({
     blur_popups = true,
 })
 
-hl.workspace_rule({
-    workspace        = "special:discord",
-    on_created_empty = "discordptb",
-})
+-- ── Launch app when a special workspace is created empty ─────────────────────
+local on_created_empty = {
+    ["special:discord"] = "discordptb",
+    ["special:equibop"] = "equibop",
+    ["special:spotify"] = "spotify",
+    ["special:btop"]    = "kitty -e btop",
+    ["special:steam"]   = "dex ~/.local/share/applications/steam.desktop",
+    ["special:aria"]    = V.aria,
+    ["special:vpn"]     = V.vpn,
+    ["special:torrent"] = "qbittorrent",
+}
 
-hl.workspace_rule({
-    workspace        = "special:equibop",
-    on_created_empty = "equibop",
-})
-
-hl.workspace_rule({
-    workspace        = "special:spotify",
-    on_created_empty = "spotify",
-})
-
-hl.workspace_rule({
-    workspace        = "special:btop",
-    on_created_empty = "kitty -e btop",
-})
-
-hl.workspace_rule({
-    workspace        = "special:steam",
-    on_created_empty = "dex ~/.local/share/applications/steam.desktop",
-})
-
-hl.workspace_rule({
-    workspace = "special:aria",
-    on_created_empty = V.aria,
-})
-
-hl.workspace_rule({
-    workspace        = "special:vpn",
-    on_created_empty = V.vpn,
-})
-
-hl.workspace_rule({
-    workspace        = "special:torrent",
-    on_created_empty = "qbittorrent",
-})
+hl.on("workspace.created", function(ws)
+    local cmd = on_created_empty[ws.name]
+    if cmd and ws.is_empty then
+        hl.exec_cmd(cmd)
+    end
+end)
 
 hl.window_rule({
     match    = { class = ".*" },

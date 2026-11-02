@@ -72,6 +72,5 @@ with pkgs;
   inputs.twintaillauncher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.wl-shimeji.packages.${pkgs.stdenv.hostPlatform.system}.default
-  inputs.amethyst-mod-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
   inputs.custom-packages.packages.${pkgs.stdenv.hostPlatform.system}.stremio-enhanced
 ]
