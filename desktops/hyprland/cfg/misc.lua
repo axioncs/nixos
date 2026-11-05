@@ -49,3 +49,5 @@ hl.config({
     force_zero_scaling = true
   }
 })
+
+hl.config({ render = { cm_auto_hdr = 0 } })

@@ -65,6 +65,8 @@ hl.bind(mod2 .. " + V", hl.dsp.exec_cmd("noctalia msg panel-toggle control-cente
 --  Brightness
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("noctalia msg brightness-up"), { locked = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("noctalia msg brightness-down"), { locked = true })
+hl.bind(mod .. " + F2", hl.dsp.exec_cmd("noctalia msg brightness-up"), { locked = true })
+hl.bind(mod .. " + F1", hl.dsp.exec_cmd("noctalia msg brightness-down"), { locked = true })
 
 --  Media controls
 hl.bind(mod .. " + CTRL + Space", hl.dsp.exec_cmd("noctalia msg media toggle"), { locked = true })

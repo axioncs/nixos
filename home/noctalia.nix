@@ -115,7 +115,7 @@ in
             type = "media_player";
 
             settings = {
-              background_color = "surface_variant";
+              background_color = "surface_container";
               font_family = "Adwaita Sans";
               hide_when_no_media = true;
             };
