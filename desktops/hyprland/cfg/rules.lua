@@ -130,10 +130,13 @@ hl.window_rule({
 
 -- Steam notification toasts: bottom-right corner, unfocused
 hl.window_rule({
-    match    = { class = "steam", title = "^notificationtoasts_\\d+_desktop$" },
-    float    = true,
-    no_focus = true,
-    move     = { "monitor_w - window_w - 10", "monitor_h - window_h - 10" },
+    match          = { class = "steam", title = "^notificationtoasts_\\d+_desktop$" },
+    float          = true,
+    no_focus       = true,
+    no_initial_focus = true,
+    workspace      = "unset",
+    suppress_event = "activate activatefocus",
+    move           = { "monitor_w - window_w - 10", "monitor_h - window_h - 10" },
 })
 
 hl.window_rule({

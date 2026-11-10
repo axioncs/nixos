@@ -12,8 +12,16 @@ in
 
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.tokyoNight;
-    colorScheme = "Night";
+    theme = {
+      name = "colorful";
+      src = inputs.spicetify-colorful + "/src";
+      appendName = false;
+      injectCss = true;
+      replaceColors = true;
+      overwriteAssets = true;
+      injectThemeJs = true;
+    };
+    colorScheme = "base";
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       hidePodcasts

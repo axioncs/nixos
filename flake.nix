@@ -73,6 +73,11 @@
       url = "github:iwalton3/default-shader-pack";
       flake = false;
     };
+
+    spicetify-colorful = {
+      url = "github:sanoojes/spicetify-colorful";
+      flake = false;
+    };
   };
 
   outputs =
