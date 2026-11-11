@@ -28,7 +28,6 @@ local on_created_empty = {
     ["special:steam"]   = "dex ~/.local/share/applications/steam.desktop",
     ["special:aria"]    = V.aria,
     ["special:vpn"]     = V.vpn,
-    ["special:torrent"] = "qbittorrent",
 }
 
 hl.on("workspace.created", function(ws)
@@ -58,14 +57,6 @@ hl.window_rule({
 hl.window_rule({
     match     = { class = "^(equibop)$" },
     workspace = "special:equibop",
-    float     = true,
-    size      = V.scratchpad_discord_size,
-})
-
--- qBittorrent
-hl.window_rule({
-    match     = { class = "^(org.qbittorrent.qBittorrent)$" },
-    workspace = "special:torrent",
     float     = true,
     size      = V.scratchpad_discord_size,
 })

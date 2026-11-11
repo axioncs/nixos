@@ -26,7 +26,6 @@ with pkgs;
   bibata-cursors
   adw-gtk3
   papirus-icon-theme
-  qbittorrent
   localsend
   protonplus
   nautilus
