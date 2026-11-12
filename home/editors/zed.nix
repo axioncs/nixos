@@ -50,7 +50,7 @@
               small_image = "{base_icons_url}/idle.png";
               small_text = "Idle";
               state = "Idling";
-              timeout = 3000;
+              timeout = 86400;
             };
             large_image = "{base_icons_url}/{language:lo}.png";
             large_text = "{language:u}";

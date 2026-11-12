@@ -5,13 +5,14 @@
 
   nix.settings = {
       extra-substituters = [
-        "https://noctalia.cachix.org"
         "https://cache.numtide.com"
+        "https://hyprland.cachix.org"
       ];
       extra-trusted-public-keys = [
-        "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
+      trusted-users = [ "root" "@wheel" ];
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
       netrc-file = config.age.secrets.nix-netrc.path;

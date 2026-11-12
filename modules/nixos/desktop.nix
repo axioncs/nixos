@@ -2,6 +2,7 @@
 
 {
   chaotic.mesa-git.enable = true;
+  chaotic.mesa-git.fallbackSpecialisation = false;
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;

@@ -25,7 +25,7 @@ local on_created_empty = {
     ["special:equibop"] = "equibop",
     ["special:spotify"] = "spotify",
     ["special:btop"]    = "kitty -e btop",
-    ["special:steam"]   = "dex ~/.local/share/applications/steam.desktop",
+    ["special:steam"]   = "steam",
     ["special:aria"]    = V.aria,
     ["special:vpn"]     = V.vpn,
 }

@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -30,6 +31,11 @@
 
     twintaillauncher = {
       url = "github:axioncs/twintaillauncher-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ember = {
+      url = "github:axioncs/ember";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -89,6 +95,7 @@
       lanzaboote,
       chaotic,
       qylock,
+      ember,
       ...
     }@inputs:
 
@@ -122,6 +129,7 @@
           lanzaboote.nixosModules.lanzaboote
           qylock.nixosModules.default
           agenix.nixosModules.default
+          ember.nixosModules.default
 
           (
             { ... }:
