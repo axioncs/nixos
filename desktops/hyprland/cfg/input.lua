@@ -20,7 +20,9 @@ hl.config({
     },
 
     cursor = {
-        hotspot_padding = 1,
+        hotspot_padding     = 1,
         no_hardware_cursors = false,
+        hide_on_key_press   = V.cursor_hide_on_type,
+        inactive_timeout    = V.cursor_inactive_secs,
     },
 })

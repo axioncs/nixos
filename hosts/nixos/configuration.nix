@@ -15,7 +15,6 @@
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/services.nix
     ../../modules/nixos/xdg.nix
-    ../../modules/nixos/environment.nix
     ../../modules/nixos/gaming.nix
     ../../modules/nixos/sysctl.nix
     ../../modules/nixos/agenix.nix

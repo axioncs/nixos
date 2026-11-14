@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-TMP_IMG=$(mktemp /tmp/ocr-XXXX.png)
+img=$(mktemp /tmp/ocr-XXXX.png)
+trap 'rm -f "$img"' EXIT
 
-grimblast --freeze save area "$TMP_IMG"
-
-tesseract "$TMP_IMG" stdout -l eng 2>/dev/null | wl-copy
-
-rm "$TMP_IMG"
+grimblast --freeze save area "$img" || exit 0
+tesseract "$img" stdout -l eng 2>/dev/null | wl-copy

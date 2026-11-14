@@ -80,7 +80,7 @@ hl.bind("XF86AudioStop", hl.dsp.exec_cmd("noctalia msg media stop"), { locked = 
 -- Volume
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
-hl.bind("SUPER + SHIFT + M", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
+hl.bind(mod .. " + SHIFT + M", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 hl.bind(
     "XF86AudioRaiseVolume",
     hl.dsp.exec_cmd(
@@ -161,11 +161,6 @@ pcall(function()
     hl.bind("switch:off:Lid Switch", hl.dsp.dpms({ action = "enable" }), { locked = true })
 end)
 
---  Update dotfiles (git pull + re-symlink via install.fish --update)
-hl.bind(mod .. " + SHIFT + U", hl.dsp.exec_cmd(
-    "sh -c 'fish ~/.local/share/hyprdots/install.fish --update &'"
-))
-
 -- Super+Tab (standard MRU)
 hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("snappy-switcher next --mod super"))
 
@@ -173,7 +168,7 @@ hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("snappy-switcher next --mod super"))
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod alt"))
 
 -- Disable all keybinds
-hl.bind("SUPER + Escape", hl.dsp.submap("passthru"))
+hl.bind(mod .. " + Escape", hl.dsp.submap("passthru"))
 hl.define_submap("passthru", function()
-    hl.bind("SUPER + Escape", hl.dsp.submap("reset"))
+    hl.bind(mod .. " + Escape", hl.dsp.submap("reset"))
 end)

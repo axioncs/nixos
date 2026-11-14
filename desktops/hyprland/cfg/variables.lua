@@ -22,7 +22,6 @@ V.gaps_in                 = 5
 V.gaps_out                = 10
 
 -- Window styling
-V.opacity                 = 0.85
 V.opacity_focused         = 0.85
 V.opacity_unfocused       = 0.80
 V.rounding                = 15
@@ -38,7 +37,7 @@ V.blur_special_ws         = false
 V.blur_popups             = true
 V.blur_input_methods      = true
 V.blur_size               = 6
-V.blur_passes             = 4
+V.blur_passes             = 3
 
 -- Shadow
 V.shadow_enabled          = false
@@ -59,7 +58,7 @@ V.anim_fade_speed         = 4.0
 V.anim_workspace_speed    = 5.0
 
 -- Special workspaces
-V.scratchpad_discord_size = { 1600, 900 } -- fixed px (matches your window rule)
+V.scratchpad_discord_size = { 1600, 900 }
 
 -- Misc
 V.volume_step             = 2 -- percent per media key press

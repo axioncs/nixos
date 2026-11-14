@@ -1,148 +1,52 @@
 local V = require("cfg/variables")
 
--- ── Bezier curves ────────────────────────────────────────────────────────────
+-- Curves
+local curves = {
+    snap  = { { 0.16, 1.0 }, { 0.3, 1.0 } },   -- fast decel
+    pop   = { { 0.3, 1.05 }, { 0.55, 1.0 } },  -- light bounce
+    glide = { { 0.13, 1.0 }, { 0.25, 1.0 } },  -- tight ease-out
+    drift = { { 0.35, 0.0 }, { 0.25, 1.0 } },  -- ease-in-out
+}
+for name, points in pairs(curves) do
+    hl.curve(name, { type = "bezier", points = points })
+end
 
--- snap: Fast, minimal-overshoot deceleration — the workhorse curve
-hl.curve("snap", { type = "bezier", points = { { 0.16, 1.0 }, { 0.3, 1.0 } } })
-
--- pop: Quick entry with a light, controlled bounce (reduced overshoot vs before)
-hl.curve("pop", { type = "bezier", points = { { 0.3, 1.05 }, { 0.55, 1.0 } } })
-
--- glide: Tight ease-out, still smooth but no lingering tail
-hl.curve("glide", { type = "bezier", points = { { 0.13, 1.0 }, { 0.25, 1.0 } } })
-
--- drift: Physical ease-in-out, kept for layer transitions
-hl.curve("drift", { type = "bezier", points = { { 0.35, 0.0 }, { 0.25, 1.0 } } })
-
--- ── Global switch ────────────────────────────────────────────────────────────
 hl.config({ animations = { enabled = true } })
 
--- ── Windows ──────────────────────────────────────────────────────────────────
--- Open: quick scale-up from 95% — small distance, fast settle, light pop
-hl.animation({
-    leaf    = "windowsIn",
-    enabled = true,
-    speed   = V.anim_windows_speed,
-    bezier  = "pop",
-    style   = "popin 95%"
-})
+local w  = V.anim_windows_speed
+local ws = V.anim_workspace_speed
+local l  = V.anim_layer_speed
+local f  = V.anim_fade_speed
 
--- Close: fast, decisive
-hl.animation({
-    leaf    = "windowsOut",
-    enabled = true,
-    speed   = V.anim_windows_speed * 1.15,
-    bezier  = "snap",
-    style   = "popin 95%"
-})
+-- { leaf, enabled, speed, bezier, style }
+local anims = {
+    -- Windows
+    { "windowsIn",           true,  w,        "pop",   "popin 95%" },
+    { "windowsOut",          true,  w * 1.15, "snap",  "popin 95%" },
+    { "windows",             true,  w,        "glide" },
 
--- Move / resize: near-instant tracking — this is the one you feel most
-hl.animation({
-    leaf    = "windows",
-    enabled = true,
-    speed   = V.anim_windows_speed,
-    bezier  = "glide"
-})
+    -- Workspaces
+    { "workspaces",          true,  ws,        "glide", "slidevert" },
+    { "workspacesIn",        true,  ws,        "glide", "slidevert" },
+    { "workspacesOut",       true,  ws * 1.1,  "snap",  "slidevert" },
+    { "specialWorkspaceIn",  true,  ws,        "glide", "slidevert" },
+    { "specialWorkspaceOut", true,  ws * 1.2,  "snap",  "slidevert" },
 
--- ── Workspaces ───────────────────────────────────────────────────────────────
-hl.animation({
-    leaf    = "workspaces",
-    enabled = true,
-    speed   = V.anim_workspace_speed,
-    bezier  = "glide",
-    style   = "slidevert"
-})
+    -- Layers
+    { "layersIn",            false, l,        "drift", "slide" },
+    { "layersOut",           false, l * 1.1,  "snap",  "fade" },
+    { "fadeLayersIn",        true,  l,        "glide" },
+    { "fadeLayersOut",       true,  l * 1.15, "snap" },
 
-hl.animation({
-    leaf    = "workspacesIn",
-    enabled = true,
-    speed   = V.anim_workspace_speed,
-    bezier  = "glide",
-    style   = "slidevert"
-})
+    -- Fade
+    { "fade",                true,  f,        "glide" },
+    { "fadeIn",              true,  f,        "glide" },
+    { "fadeOut",             true,  f * 1.15, "snap" },
 
-hl.animation({
-    leaf    = "workspacesOut",
-    enabled = true,
-    speed   = V.anim_workspace_speed * 1.1,
-    bezier  = "snap",
-    style   = "slidevert"
-})
+    -- Border
+    { "border",              true,  6.0,      "glide" },
+}
 
--- ── Special Workspaces (Scratchpad) ──────────────────────────────────────────
-hl.animation({
-    leaf    = "specialWorkspaceIn",
-    enabled = true,
-    speed   = V.anim_workspace_speed,
-    bezier  = "glide",
-    style   = "slidevert"
-})
-
-hl.animation({
-    leaf    = "specialWorkspaceOut",
-    enabled = true,
-    speed   = V.anim_workspace_speed * 1.2,
-    bezier  = "snap",
-    style   = "slidevert"
-})
-
--- ── Layer-shell (panels, notifications, overlays) ────────────────────────────
-hl.animation({
-    leaf    = "layersIn",
-    enabled = false,
-    speed   = V.anim_layer_speed,
-    bezier  = "drift",
-    style   = "slide"
-})
-
-hl.animation({
-    leaf    = "layersOut",
-    enabled = false,
-    speed   = V.anim_layer_speed * 1.1,
-    bezier  = "snap",
-    style   = "fade"
-})
-
-hl.animation({
-    leaf    = "fadeLayersIn",
-    enabled = true,
-    speed   = V.anim_layer_speed,
-    bezier  = "glide"
-})
-
-hl.animation({
-    leaf    = "fadeLayersOut",
-    enabled = true,
-    speed   = V.anim_layer_speed * 1.15,
-    bezier  = "snap"
-})
-
--- ── Fade (focus change, opacity transitions) ─────────────────────────────────
-hl.animation({
-    leaf    = "fade",
-    enabled = true,
-    speed   = V.anim_fade_speed,
-    bezier  = "glide"
-})
-
-hl.animation({
-    leaf    = "fadeIn",
-    enabled = true,
-    speed   = V.anim_fade_speed,
-    bezier  = "glide"
-})
-
-hl.animation({
-    leaf    = "fadeOut",
-    enabled = true,
-    speed   = V.anim_fade_speed * 1.15,
-    bezier  = "snap"
-})
-
--- ── Borders ──────────────────────────────────────────────────────────────────
-hl.animation({
-    leaf    = "border",
-    enabled = true,
-    speed   = 6.0,
-    bezier  = "glide"
-})
+for _, a in ipairs(anims) do
+    hl.animation({ leaf = a[1], enabled = a[2], speed = a[3], bezier = a[4], style = a[5] })
+end

@@ -1,6 +1,6 @@
 local V = require("cfg/variables")
 
--- ── Environment variables ─────────────────────────────────────────────────────
+-- Environment variables
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("CLUTTER_BACKEND", "wayland")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
@@ -14,40 +14,25 @@ hl.env("GDK_BACKEND", "wayland,x11")
 hl.env("SDL_VIDEODRIVER", "wayland,x11,windows")
 hl.env("_JAVA_AWT_WM_NONREPARENTING", "1")
 
--- Cursor theme (Xwayland + Hyprland native)
+-- Cursor theme
 hl.env("XCURSOR_THEME", V.cursor_theme)
 hl.env("XCURSOR_SIZE", tostring(V.cursor_size))
 hl.env("HYPRCURSOR_THEME", V.cursor_theme)
 hl.env("HYPRCURSOR_SIZE", tostring(V.cursor_size))
-hl.env("GDK_SCALE", "1.5")
 
--- ── Cursor behaviour ─────────────────────────────────────────────────────────
-hl.config({
-    cursor = {
-        hide_on_key_press = V.cursor_hide_on_type,
-        inactive_timeout  = V.cursor_inactive_secs,
-    },
-})
-
--- ── Misc compositor settings ─────────────────────────────────────────────────
+-- Misc
 hl.config({
     misc = {
-        force_default_wallpaper = 0,
-        disable_hyprland_logo   = true,
-        focus_on_activate       = true,
-        mouse_move_enables_dpms = true,
-        key_press_enables_dpms  = true,
-        enable_swallow = true,
-        swallow_regex = "(kitty|Alacritty|foot|ghostty)",
-        animate_manual_resizes = true,
+        force_default_wallpaper      = 0,
+        disable_hyprland_logo        = true,
+        focus_on_activate            = true,
+        mouse_move_enables_dpms      = true,
+        key_press_enables_dpms       = true,
+        enable_swallow               = true,
+        swallow_regex                = "(kitty|Alacritty|foot|ghostty)",
+        animate_manual_resizes       = true,
         animate_mouse_windowdragging = true,
     },
+    xwayland = { force_zero_scaling = true },
+    render   = { cm_auto_hdr = 0 },
 })
-
-hl.config({
-  xwayland = {
-    force_zero_scaling = true
-  }
-})
-
-hl.config({ render = { cm_auto_hdr = 0 } })
