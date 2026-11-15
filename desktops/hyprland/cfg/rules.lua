@@ -27,13 +27,14 @@ hl.layer_rule({
 
 -- Special workspaces (scratchpads)
 local scratchpads = {
-    discord = { class = "^(discord)$",         cmd = "discordptb", float = true },
-    equibop = { class = "^(equibop)$",         cmd = "equibop",    float = true },
-    spotify = { class = "^(Spotify|spotify)$", cmd = "spotify" },
-    steam   = { class = "^(Steam|steam)$",     cmd = "steam" },
-    btop    = { cmd = "kitty -e btop" },
-    aria    = { cmd = V.aria },
-    vpn     = { cmd = V.vpn },
+    discord  = { class = "^(discord)$",          cmd = "discordptb",       float = true },
+    equibop  = { class = "^(equibop)$",          cmd = "equibop",          float = true },
+    twintail = { class = "^(twintaillauncher)$", cmd = "twintaillauncher", float = true, size = { 1200, 750 } },
+    spotify  = { class = "^(Spotify|spotify)$",  cmd = "spotify" },
+    steam    = { class = "^(Steam|steam)$",      cmd = "steam" },
+    btop     = { cmd = "kitty -e btop" },
+    aria     = { cmd = V.aria },
+    vpn      = { cmd = V.vpn },
 }
 
 for name, s in pairs(scratchpads) do
@@ -42,7 +43,7 @@ for name, s in pairs(scratchpads) do
             match     = { class = s.class },
             workspace = "special:" .. name,
             float     = s.float,
-            size      = s.float and V.scratchpad_discord_size or nil,
+            size      = s.float and (s.size or V.scratchpad_discord_size) or nil,
         })
     end
 end
@@ -69,7 +70,6 @@ hl.window_rule({
 })
 
 -- Floating windows
-float({ class = "^(twintaillauncher)$" }, { 1200, 750 })
 float({ title = "^(Pick game to add|Open File|Location|Open Files|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename|Select what to share)$|File Upload" }, { 1000, 600 })
 float({ class = "^hyprland-share-picker$" }, { 1000, 600 })
 float({ class = "^(DesktopEditors|imv)$" })

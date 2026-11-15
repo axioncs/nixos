@@ -30,7 +30,6 @@ hl.bind(mod .. " + C", hl.dsp.exec_cmd(V.editor))
 
 hl.bind(mod .. " + H", hl.dsp.exec_cmd("stremio-enhanced"))
 hl.bind(mod2 .. " + G", hl.dsp.exec_cmd("faugus-launcher"))
-hl.bind(mod2 .. " + A", hl.dsp.exec_cmd("twintaillauncher"))
 hl.bind(mod2 .. " + S", hl.dsp.exec_cmd("feishin"))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd("aula-s75pro"))
 --  Hypr Scipts
@@ -47,6 +46,7 @@ hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
 hl.bind(mod .. " + SHIFT + S", hl.dsp.workspace.toggle_special("vpn"))
 hl.bind(mod .. " + G", hl.dsp.workspace.toggle_special("steam"))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.workspace.toggle_special("btop"))
+hl.bind(mod2 .. " + A", hl.dsp.workspace.toggle_special("twintail"))
 
 --  Noctalia binds
 hl.bind("ALT + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
