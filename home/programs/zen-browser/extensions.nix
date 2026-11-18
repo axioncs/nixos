@@ -27,7 +27,7 @@ let
   };
 in
 {
-  programs.zen-browser.profiles.default = {
+  programs.zen-browser.profiles = lib.genAttrs [ "default" "unstable" ] (_: {
     extensions.packages = (with firefox-addons; [
       aria2-integration
       bitwarden
@@ -41,5 +41,5 @@ in
     ]) ++ [ cat-catch ];
 
     presets.betterfox.enable = true;
-  };
+  });
 }

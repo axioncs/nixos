@@ -15,5 +15,6 @@
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
+    profiles.unstable.id = 1;
   };
 }

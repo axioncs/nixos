@@ -14,7 +14,10 @@ in
 {
   hardware.steam-hardware.enable = true;
   programs.gamescope.enable = true;
-  programs.ember.enable = true;
+  programs.ember = {
+    enable = true;
+    cloudRemote = "gdrive";
+  };
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;

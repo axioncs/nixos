@@ -117,6 +117,7 @@ end
 hl.bind(mod2 .. " + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mod2 .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
+hl.bind(mod .. " + SHIFT + F", hl.dsp.window.set_prop({ prop = "opaque", value = "toggle" }))
 hl.bind(mod .. " + SHIFT + C", hl.dsp.group.toggle())
 
 --  Mouse drag / resize
