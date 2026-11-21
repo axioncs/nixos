@@ -1,12 +1,12 @@
 { pkgs, inputs, ... }:
 
 let
-  proton = pkgs.proton-cachyos_x86_64_v3;
+  proton = pkgs.proton-cachyos-bin_x86_64_v3;
 
   aula-s75pro = pkgs.writeShellScriptBin "aula-s75pro" ''
     export WINEPREFIX="$HOME/.local/share/aula-prefix"
     export GAMEID=0
-    export PROTONPATH="${proton}"
+    export PROTONPATH="${proton.steamcompattool or proton}"
     exec ${pkgs.umu-launcher}/bin/umu-run \
       "$WINEPREFIX/drive_c/Program Files (x86)/S75Pro/DeviceDriver.exe"
   '';
@@ -23,7 +23,7 @@ in
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
-    extraCompatPackages = [ proton ];
+    extraCompatPackages = [ (proton.steamcompattool or proton) ];
   };
 
   programs.gamemode = {

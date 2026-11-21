@@ -5,6 +5,7 @@
     enable = true;
     discord = {
       branches = [ "ptb" ];
+      openASAR.enable = false;
       equicord.enable = true;
       krisp.enable = true;
     };

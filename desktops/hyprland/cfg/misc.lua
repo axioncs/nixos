@@ -34,5 +34,5 @@ hl.config({
         animate_mouse_windowdragging = true,
     },
     xwayland = { force_zero_scaling = true },
-    render   = { cm_auto_hdr = 0 },
+    render   = { cm_auto_hdr = 2 },
 })

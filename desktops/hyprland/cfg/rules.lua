@@ -73,6 +73,7 @@ hl.window_rule({
 float({ title = "^(Pick game to add|Open File|Location|Open Files|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename|Select what to share)$|File Upload" }, { 1000, 600 })
 float({ class = "^hyprland-share-picker$" }, { 1000, 600 })
 float({ class = "^(DesktopEditors|imv)$" })
+float({ class = "^zen-twilight$", initial_title = "^Little Zen$" }, { 1000, 700 })
 
 -- Picture-in-Picture
 hl.window_rule({

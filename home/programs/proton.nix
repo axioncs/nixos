@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 let
-  protonCachy = pkgs.proton-cachyos_x86_64_v3;
-  protonGE = pkgs.proton-ge-custom;
+  protonCachy = pkgs.proton-cachyos-bin_x86_64_v3;
+  protonGE = pkgs.proton-ge-bin_edge;
 in
 {
   home.file.".local/share/Steam/compatibilitytools.d/proton-cachyos-v3".source =

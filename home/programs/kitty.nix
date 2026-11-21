@@ -27,6 +27,7 @@
       mouse_hide_wait = 3.0;
       allow_remote_control = true;
       notify_on_cmd_finish = "unfocused";
+      confirm_os_window_close = 0;
     };
 
     keybindings = {

@@ -40,6 +40,7 @@ with pkgs;
   gpu-screen-recorder
   feishin
   nicotine-plus
+  goverlay
   eza
   zoxide
   fzf
