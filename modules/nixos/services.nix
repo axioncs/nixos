@@ -4,14 +4,7 @@
   imports = [ inputs.surfshark.nixosModules.default ];
 
   security.polkit.enablePkexecWrapper = true;
-
   hardware.enableRedistributableFirmware = true;
-  hardware.bluetooth.enable = true;
-
-  services.dbus = {
-    enable = true;
-    packages = with pkgs; [ bluez ];
-  };
 
   services.ananicy = {
     enable = true;
@@ -37,7 +30,6 @@
   programs.seahorse.enable = true;
   services.surfshark-vpn.enable = true;
   services.power-profiles-daemon.enable = true;
-  services.printing.enable = false;
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   services.upower.enable = true;

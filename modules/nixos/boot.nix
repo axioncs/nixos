@@ -28,7 +28,6 @@
   boot.kernelModules = [ "cfg80211" "ntsync" ];
 
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.consoleLogLevel = 0;
 
   boot.plymouth.enable = true;
   boot.tmp.cleanOnBoot = true;

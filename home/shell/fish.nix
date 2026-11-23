@@ -146,7 +146,6 @@
       set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
       if status is-interactive
-        command -v direnv &>/dev/null && direnv hook fish | source
         command -v zoxide &>/dev/null && zoxide init fish | source
         command -v zoxide &>/dev/null && zoxide init fish --cmd cd | source
 

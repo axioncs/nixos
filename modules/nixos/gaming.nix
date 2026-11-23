@@ -12,7 +12,6 @@ let
   '';
 in
 {
-  hardware.steam-hardware.enable = true;
   programs.gamescope.enable = true;
   programs.ember = {
     enable = true;
@@ -58,8 +57,6 @@ in
 
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="2c87", MODE="0666", GROUP="plugdev"
-    SUBSYSTEM=="usb", ATTR{idVendor}=="28de", ATTR{idProduct}=="2101", MODE="0666", GROUP="plugdev"
-    SUBSYSTEM=="usb", ATTR{idVendor}=="28de", ATTR{idProduct}=="2000", MODE="0666", GROUP="plugdev"
   '';
 
   services.udev.packages = [

@@ -27,7 +27,7 @@ hl.layer_rule({
 
 -- Special workspaces (scratchpads)
 local scratchpads = {
-    discord  = { class = "^(discord)$",          cmd = "discordptb",       float = true },
+    discord  = { class = "^(discord-ptb|discord)$", cmd = "discordptb", float = true },
     equibop  = { class = "^(equibop)$",          cmd = "equibop",          float = true },
     twintail = { class = "^(twintaillauncher)$", cmd = "twintaillauncher", float = true, size = { 1200, 750 } },
     spotify  = { class = "^(Spotify|spotify)$",  cmd = "spotify" },

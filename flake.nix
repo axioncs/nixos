@@ -21,7 +21,12 @@
     };
 
     llm-agents.url = "github:numtide/llm-agents.nix";
-    nixcord.url = "github:4evy/nixcord";
+
+    nixcord = {
+      url = "github:4evy/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
 
     surfshark = {
       url = "github:axioncs/surfshark-flake";

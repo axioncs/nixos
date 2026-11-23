@@ -18,16 +18,11 @@ with pkgs;
 [
   corefonts
   R-with-packages
-# RStudio-with-packages
-  kitty
+  RStudio-with-packages
   nwg-look
   libnotify
   xwayland-satellite
-  bibata-cursors
-  adw-gtk3
-  papirus-icon-theme
   localsend
-  protonplus
   nautilus
   imv
   songrec
@@ -40,24 +35,19 @@ with pkgs;
   gpu-screen-recorder
   feishin
   nicotine-plus
-  goverlay
+  amethyst-mod-manager
   eza
   zoxide
   fzf
   btop
   ncdu
   duf
-  fastfetch
   ripgrep
   fd
   tree
   grimblast
   tesseract
-  lazygit
-  git
   gh
-  zed-editor
-  helix
   bat
   nh
   pipx
