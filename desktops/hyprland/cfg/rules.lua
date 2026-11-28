@@ -31,7 +31,7 @@ local scratchpads = {
     equibop  = { class = "^(equibop)$",          cmd = "equibop",          float = true },
     twintail = { class = "^(twintaillauncher)$", cmd = "twintaillauncher", float = true, size = { 1200, 750 } },
     spotify  = { class = "^(Spotify|spotify)$",  cmd = "spotify" },
-    steam    = { class = "^(Steam|steam)$",      cmd = "steam" },
+    steam    = { class = "^(Steam|steam)$",      cmd = "steam-ember" },
     btop     = { cmd = "kitty -e btop" },
     aria     = { cmd = V.aria },
     vpn      = { cmd = V.vpn },
